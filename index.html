@@ -1,0 +1,1711 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>NananBet — jogue muito, não pague nada</title>
+<meta name="description" content="NananBet — jogue muito, não pague nada. Slots, crash, roleta, blackjack, mines, bingo e mais de 12 jogos com créditos virtuais.">
+<meta name="keywords" content="NananBet, jogos online, slots, crash, roleta, blackjack, mines, bingo, entretenimento">
+<meta name="theme-color" content="#08080f">
+<meta property="og:title" content="NananBet — jogue muito, não pague nada">
+<meta property="og:description" content="Mais de 12 jogos com créditos virtuais. Sem depósito, sem saque.">
+<meta property="og:type" content="website">
+<style>
+:root{--bg:#08080f;--bg2:#10101c;--card:#16162a;--card2:#1e1e35;--line:#2b2b48;--gold:#ffc542;--gold2:#ff9f1c;--green:#25d97a;--red:#ff4d5e;--text:#ececf5;--muted:#8b8ba7}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:radial-gradient(900px 500px at 10% -10%,rgba(255,159,28,.10),transparent 60%),radial-gradient(800px 500px at 110% 10%,rgba(120,80,255,.12),transparent 60%),linear-gradient(180deg,var(--bg),var(--bg2));color:var(--text);min-height:100vh}
+.app{max-width:520px;margin:0 auto;padding:0 14px 40px;min-height:100vh;display:flex;flex-direction:column}
+header{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:10px;padding:12px 0;margin-bottom:6px;background:linear-gradient(180deg,rgba(8,8,15,.96),rgba(8,8,15,.75),transparent);backdrop-filter:blur(8px)}
+.logo{font-size:1.5rem;font-weight:900;letter-spacing:-.5px;cursor:pointer;background:linear-gradient(90deg,var(--gold),var(--gold2),#ff6b35);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 0 22px rgba(255,159,28,.25);line-height:1.05}
+.logo span{font-size:.58rem;display:block;letter-spacing:1px;color:var(--muted);-webkit-text-fill-color:var(--muted);font-weight:600;margin-top:1px}
+.balance-chip{margin-left:auto;display:flex;align-items:center;gap:8px;background:linear-gradient(135deg,#1e1e35,#16162a);border:1px solid var(--line);border-radius:999px;padding:7px 14px;box-shadow:inset 0 1px 0 rgba(255,255,255,.04),0 4px 16px rgba(0,0,0,.4)}
+.balance-chip .lbl{font-size:.6rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
+.balance-chip .val{font-size:1.05rem;font-weight:800;color:var(--gold);font-variant-numeric:tabular-nums;transition:transform .15s,color .15s}
+.balance-chip .val.bump{transform:scale(1.18);color:#fff}
+.page{display:none;animation:fade .28s ease}.page.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.hero{text-align:center;padding:18px 12px 22px;border-radius:20px;margin-bottom:16px;background:linear-gradient(135deg,rgba(255,159,28,.12),rgba(120,80,255,.10));border:1px solid var(--line);position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:-50%;background:conic-gradient(from 0deg,transparent,rgba(255,197,66,.14),transparent 30%);animation:spin 7s linear infinite;pointer-events:none}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hero h1{margin:0 0 6px;font-size:1.5rem;position:relative}
+.hero p{margin:0;color:var(--muted);font-size:.82rem;position:relative}
+.badge-tag{display:inline-block;margin-top:10px;font-size:.68rem;font-weight:700;background:rgba(255,197,66,.14);color:var(--gold);border:1px solid rgba(255,197,66,.35);padding:4px 10px;border-radius:999px;position:relative;letter-spacing:.5px}
+.games-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.game-card{border-radius:18px;padding:16px 14px;cursor:pointer;position:relative;overflow:hidden;border:1px solid var(--line);background:linear-gradient(160deg,var(--card2),var(--card));transition:transform .15s,border-color .2s,box-shadow .2s}
+.game-card:active{transform:scale(.97)}
+.game-card:hover{border-color:rgba(255,197,66,.5);box-shadow:0 8px 30px rgba(255,159,28,.14)}
+.game-card .ico{font-size:2.4rem;display:block;margin-bottom:8px;filter:drop-shadow(0 4px 12px rgba(0,0,0,.5))}
+.game-card h3{margin:0 0 4px;font-size:1rem}
+.game-card p{margin:0;font-size:.72rem;color:var(--muted);line-height:1.35}
+.game-card .tag{position:absolute;top:10px;right:10px;font-size:.58rem;font-weight:800;letter-spacing:.5px;padding:3px 8px;border-radius:999px;background:rgba(255,197,66,.15);color:var(--gold);border:1px solid rgba(255,197,66,.3)}
+.game-card.hot::before{content:"";position:absolute;inset:0;border-radius:18px;padding:1px;background:linear-gradient(135deg,rgba(255,159,28,.7),transparent 40%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.section-title{font-size:.72rem;text-transform:uppercase;letter-spacing:1.4px;color:var(--muted);margin:20px 0 10px;font-weight:700}
+.topbar{display:flex;align-items:center;gap:10px;margin:6px 0 14px}
+.back-btn{background:var(--card);border:1px solid var(--line);color:var(--text);border-radius:10px;padding:8px 12px;cursor:pointer;font-size:.85rem;font-weight:600}
+.back-btn:hover{border-color:var(--gold);color:var(--gold)}
+.topbar h2{margin:0;font-size:1.15rem}
+.panel{background:linear-gradient(160deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:18px;padding:14px;margin-bottom:12px}
+.sound-toggle{margin-left:auto;background:transparent;border:1px solid var(--line);color:var(--muted);border-radius:10px;padding:7px 10px;cursor:pointer;font-size:.9rem}
+.sound-toggle.on{color:var(--gold);border-color:rgba(255,197,66,.5)}
+.reels{display:flex;justify-content:center;gap:10px;margin:8px 0 14px;background:#0a0a14;border:1px solid var(--line);border-radius:18px;padding:16px 12px;box-shadow:inset 0 0 40px rgba(0,0,0,.7)}
+.reel{width:82px;height:104px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:2.8rem;background:linear-gradient(180deg,#141426,#0e0e1c);border:1px solid #262640;overflow:hidden;position:relative;box-shadow:inset 0 6px 14px rgba(0,0,0,.8),inset 0 -6px 14px rgba(0,0,0,.8)}
+.reel::before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,.6),transparent 30%,transparent 70%,rgba(0,0,0,.6))}
+.reel.spin .sym{animation:blur .08s linear infinite}
+@keyframes blur{0%{transform:translateY(-8px);opacity:.6}50%{transform:translateY(0);opacity:1}100%{transform:translateY(8px);opacity:.6}}
+.reel.land{animation:land .22s cubic-bezier(.3,1.6,.5,1)}
+@keyframes land{0%{transform:scale(1.25);filter:brightness(2)}100%{transform:scale(1);filter:none}}
+.reel.win{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold),0 0 26px rgba(255,197,66,.6),inset 0 0 20px rgba(255,197,66,.25);animation:pulse 1s ease infinite alternate}
+@keyframes pulse{to{box-shadow:0 0 0 1px var(--gold),0 0 40px rgba(255,197,66,.9),inset 0 0 26px rgba(255,197,66,.4)}}
+.bet-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.bet-btn{flex:1 1 auto;min-width:62px;background:#141426;border:1px solid var(--line);color:var(--text);border-radius:10px;padding:9px 6px;font-weight:700;font-size:.82rem;cursor:pointer;transition:all .15s;font-variant-numeric:tabular-nums}
+.bet-btn.active{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#0a0a12;border-color:transparent;box-shadow:0 4px 16px rgba(255,159,28,.35)}
+.bet-btn:hover:not(.active){border-color:var(--gold);color:var(--gold)}
+.custom-row{display:flex;gap:8px;margin-bottom:12px}
+.custom-row input{flex:1;background:#0d0d18;border:1px solid var(--line);border-radius:10px;color:var(--text);padding:10px 12px;font-size:.9rem;font-family:inherit;outline:none;font-variant-numeric:tabular-nums}
+.custom-row input:focus{border-color:var(--gold)}
+.custom-row button{background:#232340;border:1px solid var(--line);color:var(--text);border-radius:10px;padding:0 16px;font-weight:700;cursor:pointer;font-size:.82rem}
+.custom-row button:hover{border-color:var(--gold);color:var(--gold)}
+.action-btn{width:100%;padding:16px;border:none;border-radius:14px;cursor:pointer;font-size:1.05rem;font-weight:900;letter-spacing:1px;text-transform:uppercase;font-family:inherit;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#0a0a12;box-shadow:0 8px 24px rgba(255,159,28,.3);transition:transform .1s,filter .15s}
+.action-btn:active:not(:disabled){transform:scale(.98)}
+.action-btn:hover:not(:disabled){filter:brightness(1.08)}
+.action-btn:disabled{opacity:.4;cursor:not-allowed;box-shadow:none}
+.action-btn.cash{background:linear-gradient(135deg,var(--green),#12a35a);color:#04140a;box-shadow:0 8px 24px rgba(37,217,122,.3)}
+.action-btn.danger{background:linear-gradient(135deg,#3a3a58,#2a2a45);color:var(--muted);box-shadow:none}
+.msg{text-align:center;min-height:24px;margin-top:12px;font-weight:800;font-size:.95rem;letter-spacing:.3px;transition:all .2s}
+.msg.win{color:var(--green);text-shadow:0 0 20px rgba(37,217,122,.5)}
+.msg.lose{color:var(--red)}.msg.info{color:var(--muted);font-weight:600}
+.msg.pop{animation:pop .35s cubic-bezier(.3,1.6,.5,1)}
+@keyframes pop{0%{transform:scale(.8);opacity:0}100%{transform:scale(1);opacity:1}}
+.paytable{margin-top:14px;border-top:1px solid var(--line);padding-top:12px;font-size:.75rem;color:var(--muted)}
+.paytable h4{margin:0 0 8px;font-size:.7rem;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted)}
+.pt-row{display:flex;justify-content:space-between;padding:3px 0}
+.pt-row span:last-child{color:var(--gold);font-weight:700;font-variant-numeric:tabular-nums}
+.history-strip{display:flex;gap:6px;overflow-x:auto;padding-bottom:6px;margin-bottom:12px;scrollbar-width:none}
+.history-strip::-webkit-scrollbar{display:none}
+.h-chip{flex:0 0 auto;font-size:.7rem;font-weight:800;padding:5px 10px;border-radius:999px;font-variant-numeric:tabular-nums}
+.h-chip.low{background:rgba(255,77,94,.15);color:var(--red);border:1px solid rgba(255,77,94,.3)}
+.h-chip.mid{background:rgba(255,197,66,.15);color:var(--gold);border:1px solid rgba(255,197,66,.3)}
+.h-chip.high{background:rgba(37,217,122,.15);color:var(--green);border:1px solid rgba(37,217,122,.3)}
+.canvas-wrap{position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--line);background:radial-gradient(circle at 50% 100%,#14142a,#08080f 70%);margin-bottom:12px}
+#planeCanvas{display:block;width:100%;height:240px}
+.canvas-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none}
+.mult-display{font-size:3.2rem;font-weight:900;font-variant-numeric:tabular-nums;color:#fff;text-shadow:0 0 30px rgba(255,255,255,.35);letter-spacing:-2px;transition:color .2s}
+.mult-display.flying{color:var(--gold);text-shadow:0 0 40px rgba(255,197,66,.6)}
+.mult-display.crashed{color:var(--red);text-shadow:0 0 40px rgba(255,77,94,.7);animation:shakeX .4s}
+@keyframes shakeX{0%,100%{transform:translateX(0)}25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+.mult-sub{font-size:.8rem;color:var(--muted);font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-top:4px}
+.status-bar{display:flex;justify-content:space-between;align-items:center;background:#0d0d18;border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin-bottom:12px;font-size:.8rem}
+.status-bar .k{color:var(--muted)}
+.status-bar .v{font-weight:800;color:var(--gold);font-variant-numeric:tabular-nums}
+.tiger-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;background:#0a0a14;border:1px solid var(--line);border-radius:18px;padding:14px;box-shadow:inset 0 0 40px rgba(0,0,0,.7);margin-bottom:12px}
+.tiger-cell{aspect-ratio:1/1;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:2.6rem;background:linear-gradient(180deg,#141426,#0e0e1c);border:1px solid #262640;box-shadow:inset 0 4px 12px rgba(0,0,0,.7);transition:all .15s}
+.tiger-cell.spin .sym{animation:blur .08s linear infinite}
+.tiger-cell.land{animation:land .22s cubic-bezier(.3,1.6,.5,1)}
+.tiger-cell.win{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold),0 0 22px rgba(255,197,66,.7),inset 0 0 16px rgba(255,197,66,.3);animation:pulse 1s ease infinite alternate}
+.roulette-display{display:flex;align-items:center;justify-content:center;margin:8px 0 14px;padding:20px;background:radial-gradient(circle at 50% 50%,#141426,#0a0a14);border:1px solid var(--line);border-radius:18px;box-shadow:inset 0 0 60px rgba(0,0,0,.8)}
+.roulette-number{width:110px;height:110px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2.6rem;font-weight:900;font-variant-numeric:tabular-nums;background:#0d0d18;border:3px solid var(--line);transition:all .3s}
+.roulette-number.red{background:linear-gradient(135deg,#a01e2c,#e63946);border-color:#ff4d5e;box-shadow:0 0 30px rgba(255,77,94,.5)}
+.roulette-number.black{background:linear-gradient(135deg,#111,#2a2a40);border-color:#4a4a6a;box-shadow:0 0 30px rgba(120,120,180,.4)}
+.roulette-number.green{background:linear-gradient(135deg,#0a7a3c,#25d97a);border-color:#25d97a;box-shadow:0 0 30px rgba(37,217,122,.5)}
+.roulette-number.spinning{animation:shakeY .1s infinite}
+@keyframes shakeY{0%{transform:translateY(-3px)}50%{transform:translateY(3px)}100%{transform:translateY(-3px)}}
+.roulette-bets{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px}
+.rb-btn{background:#141426;border:1px solid var(--line);color:var(--text);border-radius:10px;padding:10px 6px;font-weight:700;font-size:.78rem;cursor:pointer;transition:all .15s;text-align:center}
+.rb-btn.active{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#0a0a12;border-color:transparent;box-shadow:0 4px 16px rgba(255,159,28,.35)}
+.rb-btn:hover:not(.active){border-color:var(--gold);color:var(--gold)}
+.rb-btn.red-b{background:#3a1018;color:#ff8a94;border-color:#5a1a26}
+.rb-btn.red-b.active{background:linear-gradient(135deg,#e63946,#a01e2c);color:#fff;border-color:transparent}
+.rb-btn.black-b{background:#0d0d18;color:#a8a8c0;border-color:#3a3a55}
+.bj-table{display:flex;flex-direction:column;gap:12px;background:radial-gradient(ellipse at 50% 0%,#0a3a2a,#051a14);border:1px solid var(--line);border-radius:18px;padding:16px;box-shadow:inset 0 0 60px rgba(0,0,0,.8);margin-bottom:12px}
+.bj-hand{display:flex;flex-direction:column;gap:6px}
+.bj-label{font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:1.4px;font-weight:700}
+.bj-score{font-size:.9rem;color:var(--gold);font-weight:800;font-variant-numeric:tabular-nums}
+.bj-cards{display:flex;gap:6px;flex-wrap:wrap;min-height:76px}
+.card{width:52px;height:76px;border-radius:8px;background:linear-gradient(180deg,#fafafa,#e6e6e6);color:#111;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:800;position:relative;box-shadow:0 4px 12px rgba(0,0,0,.5);border:1px solid #ccc}
+.card .r{font-size:1.1rem;line-height:1}.card .s{font-size:1.3rem;line-height:1}
+.card.red{color:#c2181e}
+.card.back{background:linear-gradient(135deg,#1e3a8a,#0a1a4a);color:#fff;border-color:#0a1a4a;background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.08) 0 6px,transparent 6px 12px)}
+.card.back::after{content:"🂠";font-size:1.6rem;opacity:.8}
+.mines-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;background:#0a0a14;border:1px solid var(--line);border-radius:16px;padding:10px;margin-bottom:12px}
+.mine-tile{aspect-ratio:1/1;border-radius:10px;background:linear-gradient(180deg,#1e1e35,#141426);border:1px solid #2b2b48;display:flex;align-items:center;justify-content:center;font-size:1.5rem;cursor:pointer;transition:all .12s;box-shadow:inset 0 -3px 0 rgba(0,0,0,.4)}
+.mine-tile:hover:not(.revealed){transform:translateY(-1px);border-color:var(--gold)}
+.mine-tile.safe{background:linear-gradient(180deg,#1a4a2a,#0e2a1a);border-color:var(--green)}
+.mine-tile.mine{background:linear-gradient(180deg,#5a1a26,#2a0d12);border-color:var(--red)}
+.mine-tile.dim{opacity:.4}.mine-tile.revealed{cursor:default}
+.rasp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;background:#0a0a14;border:1px solid var(--line);border-radius:18px;padding:14px;margin-bottom:12px;box-shadow:inset 0 0 40px rgba(0,0,0,.7)}
+.rasp-cell{aspect-ratio:1/1;border-radius:12px;position:relative;overflow:hidden;cursor:pointer;border:1px solid #2b2b48}
+.rasp-face,.rasp-cover{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:2.4rem;transition:opacity .35s,transform .35s}
+.rasp-cover{background:linear-gradient(135deg,#3a2a5a,#1a1a3a);color:#8a8ac0;font-size:2rem;z-index:2}
+.rasp-face{background:linear-gradient(180deg,#1e1e35,#141426);z-index:1}
+.rasp-cell.revealed .rasp-cover{opacity:0;transform:scale(1.4) rotate(15deg);pointer-events:none}
+.rasp-cell.win{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold),0 0 22px rgba(255,197,66,.7);animation:pulse 1s ease infinite alternate;z-index:3}
+.double-stage{position:relative;border-radius:18px;overflow:hidden;background:radial-gradient(circle at 50% 50%,#14142a,#08080f);border:1px solid var(--line);padding:16px;display:flex;justify-content:center;margin-bottom:12px}
+.double-wheel{width:240px;height:240px;position:relative;display:flex;align-items:center;justify-content:center}
+.double-wheel svg{transition:transform 3s cubic-bezier(.15,.9,.25,1)}
+.double-pointer{position:absolute;top:-6px;left:50%;transform:translateX(-50%);font-size:1.6rem;color:var(--gold);filter:drop-shadow(0 0 10px rgba(255,197,66,.7));z-index:2}
+.double-result{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);background:#0a0a14;border:2px solid var(--gold);border-radius:12px;padding:6px 14px;font-weight:900;font-size:1.1rem;color:var(--gold);font-variant-numeric:tabular-nums}
+.double-bets{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px}
+.db-btn{background:#141426;border:1px solid var(--line);color:var(--text);border-radius:10px;padding:10px 6px;font-weight:800;font-size:.82rem;cursor:pointer;transition:all .15s;text-align:center}
+.db-btn.active{box-shadow:0 4px 16px rgba(0,0,0,.4);transform:translateY(-1px)}
+.db-btn.r{background:#3a1018;color:#ff8a94;border-color:#5a1a26}.db-btn.r.active{background:linear-gradient(135deg,#e63946,#a01e2c);color:#fff;border-color:transparent;box-shadow:0 4px 16px rgba(230,57,70,.4)}
+.db-btn.b{background:#0d0d18;color:#a8a8c0;border-color:#3a3a55}.db-btn.b.active{background:linear-gradient(135deg,#3a3a58,#1a1a2e);color:#fff;border-color:transparent}
+.db-btn.w{background:#3a3a1a;color:#fff8b0;border-color:#5a5a2a}.db-btn.w.active{background:linear-gradient(135deg,#fff,#d4d4d4);color:#0a0a12;border-color:transparent}
+.bingo-card{display:grid;grid-template-columns:repeat(5,1fr);gap:4px;background:#0a0a14;border:1px solid var(--line);border-radius:14px;padding:10px;margin-bottom:10px}
+.bingo-cell{aspect-ratio:1/1;border-radius:8px;background:linear-gradient(180deg,#1e1e35,#141426);border:1px solid #2b2b48;display:flex;align-items:center;justify-content:center;font-size:.9rem;font-weight:800;font-variant-numeric:tabular-nums;transition:all .2s}
+.bingo-cell.marked{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#0a0a12;border-color:transparent;transform:scale(.94);box-shadow:0 0 14px rgba(255,197,66,.5)}
+.bingo-cell.line{background:linear-gradient(135deg,var(--green),#12a35a);color:#04140a;border-color:transparent;box-shadow:0 0 18px rgba(37,217,122,.7)}
+.bingo-draw{text-align:center;background:#0d0d18;border:1px solid var(--line);border-radius:12px;padding:10px;margin-bottom:12px;font-size:.85rem;color:var(--muted)}
+.bingo-ball{display:inline-flex;width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#fff,#d4d4d4);color:#0a0a12;font-weight:900;align-items:center;justify-content:center;font-size:1.1rem;margin:0 4px;box-shadow:0 4px 12px rgba(255,255,255,.2)}
+.bacbo-stage{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center;background:radial-gradient(circle at 50% 50%,#1a1a2e,#0a0a14);border:1px solid var(--line);border-radius:18px;padding:16px;margin-bottom:12px;box-shadow:inset 0 0 40px rgba(0,0,0,.7)}
+.bb-side{text-align:center}
+.bb-side h4{margin:0 0 6px;font-size:.75rem;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);font-weight:700}
+.bb-dice{display:flex;gap:6px;justify-content:center;margin-bottom:6px}
+.bb-die{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,#fff,#d4d4d4);color:#0a0a12;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:900;box-shadow:0 4px 12px rgba(0,0,0,.5)}
+.bb-die.rolling{animation:shakeY .1s infinite}
+.bb-score{font-size:1.4rem;font-weight:900;color:var(--gold);font-variant-numeric:tabular-nums}
+.bb-vs{font-size:1.2rem;font-weight:900;color:var(--muted)}
+.bb-bets{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px}
+.bb-btn{background:#141426;border:1px solid var(--line);color:var(--text);border-radius:10px;padding:10px 6px;font-weight:800;font-size:.78rem;cursor:pointer;transition:all .15s;text-align:center}
+.bb-btn.active{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#0a0a12;border-color:transparent;box-shadow:0 4px 16px rgba(255,159,28,.35)}
+.bb-btn:hover:not(.active){border-color:var(--gold);color:var(--gold)}
+.pen-stage{position:relative;border-radius:18px;overflow:hidden;background:linear-gradient(180deg,#0a3a2a 60%,#062018);border:1px solid var(--line);padding:20px;margin-bottom:12px;text-align:center}
+.pen-goal{display:flex;justify-content:center;gap:6px;background:linear-gradient(180deg,#1e1e35,#0d0d18);border:2px solid #4a4a6a;border-radius:8px;padding:6px;margin:0 auto 12px;max-width:280px}
+.pen-zone{flex:1;aspect-ratio:1/1.4;border-radius:6px;background:linear-gradient(180deg,#2a2a48,#1a1a30);display:flex;align-items:center;justify-content:center;font-size:1.8rem;transition:all .15s}
+.pen-zone.active{border:2px solid var(--gold);box-shadow:0 0 14px rgba(255,197,66,.5)}
+.pen-zone.dive{background:linear-gradient(180deg,#3a3a58,#2a2a48)}
+.pen-keeper{font-size:2.6rem;margin:8px 0}
+.pen-ball{font-size:2rem}
+.pen-scores{display:flex;justify-content:space-around;background:#0d0d18;border:1px solid var(--line);border-radius:12px;padding:10px;margin-bottom:12px;font-size:.85rem}
+.pen-scores .v{color:var(--gold);font-weight:900;font-size:1.1rem}
+.pen-controls{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px}
+.pen-btn{background:#141426;border:1px solid var(--line);color:var(--text);border-radius:10px;padding:12px 6px;font-weight:800;font-size:.85rem;cursor:pointer;transition:all .15s}
+.pen-btn:hover:not(:disabled){border-color:var(--gold);color:var(--gold);transform:translateY(-1px)}
+.pen-btn:disabled{opacity:.4;cursor:not-allowed}
+.dice-stage{background:radial-gradient(circle at 50% 50%,#14142a,#08080f);border:1px solid var(--line);border-radius:18px;padding:24px;margin-bottom:12px;text-align:center}
+.dice-visual{font-size:5rem;line-height:1;margin-bottom:8px;transition:transform .1s}
+.dice-visual.rolling{animation:shakeY .08s infinite}
+.dice-range{position:relative;height:36px;background:#0d0d18;border:1px solid var(--line);border-radius:10px;margin:14px 0;overflow:hidden;display:flex;align-items:center;padding:0 12px;font-weight:900;font-variant-numeric:tabular-nums}
+.dice-range .fill{position:absolute;top:0;bottom:0;background:linear-gradient(90deg,var(--green),#12a35a);opacity:.25}
+.dice-range .marker{position:absolute;top:0;bottom:0;width:3px;background:var(--gold);box-shadow:0 0 12px var(--gold);transition:left .6s cubic-bezier(.15,.9,.25,1);z-index:2}
+.dice-range .num{position:relative;z-index:3;margin-left:auto;font-size:1.1rem;color:var(--gold)}
+.dice-mode{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}
+.dm-btn{background:#141426;border:1px solid var(--line);color:var(--text);border-radius:10px;padding:10px 6px;font-weight:800;font-size:.85rem;cursor:pointer;transition:all .15s}
+.dm-btn.active{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#0a0a12;border-color:transparent}
+.modal-overlay{position:fixed;inset:0;z-index:1000;background:rgba(4,4,10,.85);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:20px}
+.modal-overlay.active{display:flex;animation:fade .25s}
+.modal{background:linear-gradient(160deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:20px;padding:22px;max-width:400px;width:100%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.7)}
+.modal h3{margin:0 0 8px;color:var(--gold);font-size:1.15rem}
+.modal p{margin:0 0 18px;color:var(--muted);font-size:.85rem;line-height:1.5}
+.modal .action-btn{margin-bottom:8px}
+.modal .back-btn{width:100%}
+.test-ad-overlay{position:fixed;inset:0;z-index:1001;background:rgba(0,0,0,.9);display:none;align-items:center;justify-content:center;padding:20px}
+.test-ad-overlay.active{display:flex}
+.test-ad-banner{background:linear-gradient(135deg,#ff6b35,#ffc542);border-radius:16px;padding:28px 24px;position:relative;max-width:400px;width:100%;text-align:center;color:#0a0a12;box-shadow:0 20px 60px rgba(255,159,28,.4)}
+.test-ad-banner h2{margin:0 0 8px;font-size:1.4rem;letter-spacing:1px}
+.test-ad-banner p{margin:0;font-size:.85rem;font-weight:600;line-height:1.5}
+.test-ad-close{position:absolute;top:8px;right:8px;width:34px;height:34px;border-radius:50%;background:rgba(0,0,0,.4);color:#fff;border:none;cursor:pointer;font-size:1.2rem;font-weight:800;line-height:1;display:flex;align-items:center;justify-content:center}
+.test-ad-close:hover{background:rgba(0,0,0,.7);transform:scale(1.1)}
+footer{margin-top:auto;padding-top:22px;border-top:1px solid var(--line);text-align:center}
+footer .foot-info{max-width:420px;margin:0 auto 16px;font-size:.72rem;color:#7a7a95;line-height:1.6}
+footer .advertise-btn{display:block;width:100%;max-width:280px;margin:0 auto 18px;font-weight:700}
+footer .copyright{color:#5f5f7a;font-size:.7rem;letter-spacing:.5px}
+</style>
+</head>
+<body>
+<div class="app">
+
+  <header>
+    <div class="logo" onclick="showPage('home')">NananBet<span>jogue muito, não pague nada</span></div>
+    <div class="balance-chip">
+      <span class="lbl">Saldo</span>
+      <span class="val" id="balanceEl">R$ 7,77</span>
+    </div>
+  </header>
+
+  <section id="page-home" class="page active">
+    <div class="hero">
+      <h1>Escolha seu jogo</h1>
+      <p>Mais de 12 jogos. Créditos virtuais.</p>
+      <div class="badge-tag">🎮 CRÉDITOS VIRTUAIS · SEM VALOR MONETÁRIO</div>
+    </div>
+    <div class="section-title">Slots & Crash</div>
+    <div class="games-grid">
+      <div class="game-card hot" onclick="showPage('slots')"><span class="tag">SLOTS</span><span class="ico">🎰</span><h3>Frutas da Sorte</h3><p>3 rolos, 6 símbolos.</p></div>
+      <div class="game-card hot" onclick="showPage('aviator')"><span class="tag">CRASH</span><span class="ico">✈️</span><h3>Aviãozinho</h3><p>Saque antes de cair.</p></div>
+      <div class="game-card" onclick="showPage('tiger')"><span class="tag">SLOTS</span><span class="ico">🐯</span><h3>Fortune Tiger</h3><p>3×3, 8 linhas.</p></div>
+      <div class="game-card" onclick="showPage('rasp')"><span class="tag">RASP</span><span class="ico">🎫</span><h3>Raspadinha</h3><p>Raspe e encontre 3 iguais.</p></div>
+    </div>
+    <div class="section-title">Mesa & Cartas</div>
+    <div class="games-grid">
+      <div class="game-card" onclick="showPage('roulette')"><span class="tag">MESA</span><span class="ico">🎡</span><h3>Roleta</h3><p>Vermelho, preto, par/ímpar.</p></div>
+      <div class="game-card" onclick="showPage('blackjack')"><span class="tag">CARTAS</span><span class="ico">🃏</span><h3>Blackjack 21</h3><p>Chegue perto de 21.</p></div>
+      <div class="game-card" onclick="showPage('bacbo')"><span class="tag">DADOS</span><span class="ico">🎲</span><h3>Bac Bo</h3><p>Jogador x Banca.</p></div>
+      <div class="game-card" onclick="showPage('double')"><span class="tag">RODA</span><span class="ico">🎯</span><h3>Double</h3><p>Vermelho, preto ou branco.</p></div>
+    </div>
+    <div class="section-title">Casual & Sorte</div>
+    <div class="games-grid">
+      <div class="game-card" onclick="showPage('mines')"><span class="tag">MINAS</span><span class="ico">💣</span><h3>Mines</h3><p>Joias vs 3 bombas.</p></div>
+      <div class="game-card" onclick="showPage('bingo')"><span class="tag">BINGO</span><span class="ico">🎱</span><h3>Bingo</h3><p>Complete uma linha.</p></div>
+      <div class="game-card" onclick="showPage('penalty')"><span class="tag">FUTEBOL</span><span class="ico">⚽</span><h3>Pênalti</h3><p>5 chutes, escolha o canto.</p></div>
+      <div class="game-card" onclick="showPage('dice')"><span class="tag">DADO</span><span class="ico">🎲</span><h3>Dado</h3><p>Acima ou abaixo de um alvo.</p></div>
+    </div>
+    <div class="section-title">Como funciona</div>
+    <div class="panel" style="font-size:.8rem;color:var(--muted);line-height:1.6">
+      Você começa com <strong style="color:var(--gold)">R$ 7,77</strong> em créditos virtuais. Saldo zerado libera a opção de ganhar mais assistindo um anúncio. Sem depósito, sem saque, sem conversão.
+    </div>
+  </section>
+
+  <section id="page-slots" class="page">
+    <div class="topbar"><button class="back-btn" onclick="showPage('home')">← Voltar</button><h2>🎰 Frutas da Sorte</h2><button class="sound-toggle on">🔊</button></div>
+    <div class="reels">
+      <div class="reel" id="r0"><span class="sym">🍒</span></div>
+      <div class="reel" id="r1"><span class="sym">🍒</span></div>
+      <div class="reel" id="r2"><span class="sym">🍒</span></div>
+    </div>
+    <div class="msg info" id="slotsMsg">Escolha sua aposta e gire.</div>
+    <div class="panel" style="margin-top:14px">
+      <div class="bet-row" id="slotsBets">
+        <button class="bet-btn" data-bet="0.10">R$ 0,10</button>
+        <button class="bet-btn" data-bet="0.25">R$ 0,25</button>
+        <button class="bet-btn active" data-bet="0.50">R$ 0,50</button>
+        <button class="bet-btn" data-bet="1.00">R$ 1,00</button>
+        <button class="bet-btn" data-bet="2.00">R$ 2,00</button>
+      </div>
+      <div class="custom-row"><input type="number" id="slotsCustom" placeholder="Valor personalizado" min="0.10" step="0.10"><button onclick="applyCustomBet('slots')">Aplicar</button></div>
+      <button class="action-btn" id="spinBtn">Girar</button>
+    </div>
+    <div class="paytable">
+      <h4>Tabela (× aposta)</h4>
+      <div class="pt-row"><span>🍒 🍒 🍒</span><span>7×</span></div>
+      <div class="pt-row"><span>🍋 🍋 🍋</span><span>13×</span></div>
+      <div class="pt-row"><span>🔔 🔔 🔔</span><span>27×</span></div>
+      <div class="pt-row"><span>💎 💎 💎</span><span>40×</span></div>
+      <div class="pt-row"><span>7️⃣ 7️⃣ 7️⃣</span><span>54×</span></div>
+      <div class="pt-row"><span>⭐ ⭐ ⭐</span><span>78×</span></div>
+    </div>
+  </section>
+
+  <section id="page-aviator" class="page">
+    <div class="topbar"><button class="back-btn" onclick="showPage('home')">← Voltar</button><h2>✈️ Aviãozinho</h2><button class="sound-toggle on">🔊</button></div>
+    <div class="history-strip" id="historyStrip"></div>
+    <div class="canvas-wrap">
+      <canvas id="planeCanvas"></canvas>
+      <div class="canvas-overlay"><div class="mult-display" id="multDisplay">1.00×</div><div class="mult-sub" id="multSub">Aguardando</div></div>
+    </div>
+    <div class="status-bar"><span class="k">Aposta</span><span class="v" id="avBetDisplay">R$ 0,50</span><span class="k">Retorno</span><span class="v" id="avPotential">—</span></div>
+    <div class="msg info" id="avMsg">Faça sua aposta antes da decolagem.</div>
+    <div class="panel" style="margin-top:14px">
+      <div class="bet-row" id="avBets">
+        <button class="bet-btn" data-bet="0.10">R$ 0,10</button>
+        <button class="bet-btn" data-bet="0.25">R$ 0,25</button>
+        <button class="bet-btn active" data-bet="0.50">R$ 0,50</button>
+        <button class="bet-btn" data-bet="1.00">R$ 1,00</button>
+        <button class="bet-btn" data-bet="2.00">R$ 2,00</button>
+      </div>
+      <div class="custom-row"><input type="number" id="avCustom" placeholder="Valor personalizado" min="0.10" step="0.10"><button onclick="applyCustomBet('aviator')">Aplicar</button></div>
+      <button class="action-btn" id="avAction">Apostar</button>
+    </div>
+    <div class="paytable"><h4>Como funciona</h4><div style="line-height:1.6;font-size:.72rem">Multiplicador sobe de 1.00×. Saque antes da queda. RTP ≈95%.</div></div>
+  </section>
+
+  <section id="page-tiger" class="page">
+    <div class="topbar"><button class="back-btn" onclick="showPage('home')">← Voltar</button><h2>🐯 Fortune Tiger</h2><button class="sound-toggle on">🔊</button></div>
+    <div class="tiger-grid" id="tigerGrid">
+      <div class="tiger-cell"><span class="sym">🍀</span></div><div class="tiger-cell"><span class="sym">🍀</span></div><div class="tiger-cell"><span class="sym">🍀</span></div>
+      <div class="tiger-cell"><span class="sym">🍀</span></div><div class="tiger-cell"><span class="sym">🍀</span></div><div class="tiger-cell"><span class="sym">🍀</span></div>
+      <div class="tiger-cell"><span class="sym">🍀</span></div><div class="tiger-cell"><span class="sym">🍀</span></div><div class="tiger-cell"><span class="sym">🍀</span></div>
+    </div>
+    <div class="msg info" id="tigerMsg">8 linhas: 3 horizontais, 3 verticais, 2 diagonais.</div>
+    <div class="panel" style="margin-top:14px">
+      <div class="bet-row" id="tigerBets">
+        <button class="bet-btn" data-bet="0.10">R$ 0,10</button>
+        <button class="bet-btn" data-bet="0.25">R$ 0,25</button>
+        <button class="bet-btn active" data-bet="0.50">R$ 0,50</button>
+        <button class="bet-btn" data-bet="1.00">R$ 1,00</button>
+        <button class="bet-btn" data-bet="2.00">R$ 2,00</button>
+      </div>
+      <div class="custom-row"><input type="number" id="tigerCustom" placeholder="Valor personalizado" min="0.10" step="0.10"><button onclick="applyCustomBet('tiger')">Aplicar</button></div>
+      <button class="action-btn" id="tigerBtn">Girar</button>
+    </div>
+    <div class="paytable">
+      <h4>Prêmios (× aposta por linha)</h4>
+      <div class="pt-row"><span>🐯 🐯 🐯</span><span>30×</span></div>
+      <div class="pt-row"><span>💰 💰 💰</span><span>12×</span></div>
+      <div class="pt-row"><span>🧧 🧧 🧧</span><span>5×</span></div>
+      <div class="pt-row"><span>🎁 🎁 🎁</span><span>3×</span></div>
+      <div class="pt-row"><span>🍊 🍊 🍊</span><span>2×</span></div>
+      <div class="pt-row"><span>🍀 🍀 🍀</span><span>1×</span></div>
+    </div>
+  </section>
+
+  <section id="page-rasp" class="page">
+    <div class="topbar"><button class="back-btn" onclick="showPage('home')">← Voltar</button><h2>🎫 Raspadinha</h2><button class="sound-toggle on">🔊</button></div>
+    <div class="rasp-grid" id="raspGrid"></div>
+    <div class="msg info" id="raspMsg">Aposte e clique em cada casa para raspar.</div>
+    <div class="panel" style="margin-top:14px">
+      <div class="bet-row" id="raspBets">
+        <button class="bet-btn" data-bet="0.10">R$ 0,10</button>
+        <button class="bet-btn" data-bet="0.25">R$ 0,25</button>
+        <button class="bet-btn active" data-bet="0.50">R$ 0,50</button>
+        <button class="bet-btn" data-bet="1.00">R$ 1,00</button>
+        <button class="bet-btn" data-bet="2.00">R$ 2,00</button>
+      </div>
+      <div class="custom-row"><input type="number" id="raspCustom" placeholder="Valor personalizado" min="0.10" step="0.10"><button onclick="applyCustomBet('rasp')">Aplicar</button></div>
+      <button class="action-btn" id="raspAction">Comprar cartela</button>
+    </div>
+    <div class="paytable">
+      <h4>Prêmios (3 iguais na cartela)</h4>
+      <div class="pt-row"><span>💎 💎 💎</span><span>25×</span></div>
+      <div class="pt-row"><span>7️⃣ 7️⃣ 7️⃣</span><span>15×</span></div>
+      <div class="pt-row"><span>🔔 🔔 🔔</span><span>8×</span></div>
+      <div class="pt-row"><span>🍒 🍒 🍒</span><span>5×</span></div>
+      <div class="pt-row"><span>🍋 🍋 🍋</span><span>3×</span></div>
+      <div class="pt-row"><span>🍀 🍀 🍀</span><span>2×</span></div>
+    </div>
+  </section>
+
+  <section id="page-roulette" class="page">
+    <div class="topbar"><button class="back-btn" onclick="showPage('home')">← Voltar</button><h2>🎡 Roleta</h2><button class="sound-toggle on">🔊</button></div>
+    <div class="roulette-display"><div class="roulette-number" id="rouletteNumber">–</div></div>
+    <div class="msg info" id="rouletteMsg">Escolha um tipo de aposta.</div>
+    <div class="panel" style="margin-top:14px">
+      <div class="roulette-bets" id="rouletteBets">
+        <button class="rb-btn red-b" data-rb="red">🔴 Vermelho<br><small>2×</small></button>
+        <button class="rb-btn black-b" data-rb="black">⚫ Preto<br><small>2×</small></button>
+        <button class="rb-btn" data-rb="odd">Ímpar<br><small>2×</small></button>
+        <button class="rb-btn" data-rb="even">Par<br><small>2×</small></button>
+        <button class="rb-btn" data-rb="low">1–18<br><small>2×</small></button>
+        <button class="rb-btn" data-rb="high">19–36<br><small>2×</small></button>
+      </div>
+      <div class="bet-row" id="rouletteBetsRow">
+        <button class="bet-btn" data-bet="0.10">R$ 0,10</button>
+        <button class="bet-btn" data-bet="0.25">R$ 0,25</button>
+        <button class="bet-btn active" data-bet="0.50">R$ 0,50</button>
+        <button class="bet-btn" data-bet="1.00">R$ 1,00</button>
+        <button class="bet-btn" data-bet="2.00">R$ 2,00</button>
+      </div>
+      <div class="custom-row"><input type="number" id="rouletteCustom" placeholder="Valor personalizado" min="0.10" step="0.10"><button onclick="applyCustomBet('roulette')">Aplicar</button></div>
+      <button class="action-btn" id="rouletteBtn">Girar</button>
+    </div>
+    <div class="paytable"><h4>Como funciona</h4><div style="line-height:1.6;font-size:.72rem">Roleta europeia (0–36). Verde = 0. RTP ≈97,3%.</div></div>
+  </section>
+
+  <section id="page-blackjack" class="page">
+    <div class="topbar"><button class="back-btn" onclick="showPage('home')">← Voltar</button><h2>🃏 Blackjack 21</h2><button class="sound-toggle on">🔊</button></div>
+    <div class="bj-table">
+      <div class="bj-hand"><div class="bj-label">Banca <span class="bj-score" id="dealerScore"></span></div><div class="bj-cards" id="dealerCards"></div></div>
+      <div class="bj-hand"><div class="bj-label">Você <span class="bj-score" id="playerScore"></span></div><div class="bj-cards" id="playerCards"></div></div>
+    </div>
+    <div class="msg info" id="bjMsg">Faça sua aposta e clique em Apostar.</div>
+    <div class="panel" style="margin-top:14px">
+      <div class="bet-row" id="bjBets">
+        <button class="bet-btn" data-bet="0.10">R$ 0,10</button>
+        <button class="bet-btn" data-bet="0.25">R$ 0,25</button>
+        <button class="bet-btn active" data-bet="0.50">R$ 0,50</button>
+        <button class="bet-btn" data-bet="1.00">R$ 1,00</button>
+        <button class="bet-btn" data-bet="2.00">R$ 2,00</button>
+      </div>
+      <div class="custom-row"><input type="number" id="bjCustom" placeholder="Valor personalizado" min="0.10" step="0.10"><button onclick="applyCustomBet('blackjack')">Aplicar</button></div>
+      <div style="display:flex;gap:8px">
+        <button class="action-btn" id="bjAction" style="flex:2">Apostar</button>
+        <button class="action-btn danger" id="bjHit" style="flex:1;display:none">Pedir</button>
+        <button class="action-btn cash" id="bjStand" style="flex:1;display:none">Parar</button>
+      </div>
+    </div>
+    <div class="paytable"><h4>Como funciona</h4><div style="line-height:1.6;font-size:.72rem">Chegue perto de 21 sem estourar. Blackjack paga 2,5×. Vitória 2×. Banca para em 17.</div></div>
+  </section>
+
+  <section id="page-bacbo" class="page">
+    <div class="topbar"><button class="back-btn" onclick="showPage('home')">← Voltar</button><h2>🎲 Bac Bo</h2><button class="sound-toggle on">🔊</button></div>
+    <div class="bacbo-stage">
+      <div class="bb-side"><h4>Você</h4><div class="bb-dice" id="bbPlayerDice"><div class="bb-die">–</div><div class="bb-die">–</div></div><div class="bb-score" id="bbPlayerScore">0</div></div>
+      <div class="bb-vs">VS</div>
+      <div class="bb-side"><h4>Banca</h4><div class="bb-dice" id="bbDealerDice"><div class="bb-die">–</div><div class="bb-die">–</div></div><div class="bb-score" id="bbDealerScore">0</div></div>
+    </div>
+    <div class="msg info" id="bacboMsg">Escolha quem vence e clique em Rolar.</div>
+    <div class="bb-bets" id="bacboBets">
+      <button class="bb-btn" data-pick="player">Você<br><small>2×</small></button>
+      <button class="bb-btn" data-pick="tie">Empate<br><small>8×</small></button>
+      <button class="bb-btn" data-pick="dealer">Banca<br><small>2×</small></button>
+    </div>
+    <div class="panel">
+      <div class="bet-row" id="bacboBetsRow">
+        <button class="bet-btn" data-bet="0.10">R$ 0,10</button>
+        <button class="bet-btn" data-bet="0.25">R$ 0,25</button>
+        <button class="bet-btn active" data-bet="0.50">R$ 0,50</button>
+        <button class="bet-btn" data-bet="1.00">R$ 1,00</button>
+        <button class="bet-btn" data-bet="2.00">R$ 2,00</button>
+      </div>
+      <div class="custom-row"><input type="number" id="bacboCustom" placeholder="Valor personalizado" min="0.10" step="0.10"><button onclick="applyCustomBet('bacbo')">Aplicar</button></div>
+      <button class="action-btn" id="bacboAction">Rolar dados</button>
+    </div>
+    <div class="paytable"><h4>Como funciona</h4><div style="line-height:1.6;font-size:.72rem">Cada lado rola 2 dados. Soma maior vence. Empate paga 8×. RTP ≈97%.</div></div>
+  </section>
+
+  <section id="page-double" class="page">
+    <div class="topbar"><button class="back-btn" onclick="showPage('home')">← Voltar</button><h2>🎯 Double</h2><button class="sound-toggle on">🔊</button></div>
+    <div class="double-stage">
+      <div class="double-pointer">▼</div>
+      <div class="double-wheel" id="doubleWheel">
+        <svg viewBox="0 0 200 200" id="doubleSvg">
+          <g id="doubleSegs"></g>
+        </svg>
+      </div>
+      <div class="double-result" id="doubleResult">—</div>
+    </div>
+    <div class="msg info" id="doubleMsg">Escolha uma cor e gire.</div>
+    <div class="double-bets" id="doubleBets">
+      <button class="db-btn r" data-color="red">🔴 Vermelho<br><small>2×</small></button>
+      <button class="db-btn w" data-color="white">⚪ Branco (0)<br><small>14×</small></button>
+      <button class="db-btn b" data-color="black">⚫ Preto<br><small>2×</small></button>
+    </div>
+    <div class="panel">
+      <div class="bet-row" id="doubleBetsRow">
+        <button class="bet-btn" data-bet="0.10">R$ 0,10</button>
+        <button class="bet-btn" data-bet="0.25">R$ 0,25</button>
+        <button class="bet-btn active" data-bet="0.50">R$ 0,50</button>
+        <button class="bet-btn" data-bet="1.00">R$ 1,00</button>
+        <button class="bet-btn" data-bet="2.00">R$ 2,00</button>
+      </div>
+      <div class="custom-row"><input type="number" id="doubleCustom" placeholder="Valor personalizado" min="0.10" step="0.10"><button onclick="applyCustomBet('double')">Aplicar</button></div>
+      <button class="action-btn" id="doubleAction">Girar</button>
+    </div>
+    <div class="paytable"><h4>Como funciona</h4><div style="line-height:1.6;font-size:.72rem">Roda com 15 casas (0 a 14). 0 é branco e paga 14×. Vermelho = 1–7, preto = 8–14. RTP ≈93%.</div></div>
+  </section>
+
+  <section id="page-mines" class="page">
+    <div class="topbar"><button class="back-btn" onclick="showPage('home')">← Voltar</button><h2>💣 Mines</h2><button class="sound-toggle on">🔊</button></div>
+    <div class="status-bar"><span class="k">Aposta</span><span class="v" id="minesBetDisplay">R$ 0,50</span><span class="k">Mult.</span><span class="v" id="minesMultDisplay">1.00×</span></div>
+    <div class="mines-grid" id="minesGrid"></div>
+    <div class="msg info" id="minesMsg">Clique em apostar. 3 minas em 25 casas.</div>
+    <div class="panel" style="margin-top:14px">
+      <div class="bet-row" id="minesBets">
+        <button class="bet-btn" data-bet="0.10">R$ 0,10</button>
+        <button class="bet-btn" data-bet="0.25">R$ 0,25</button>
+        <button class="bet-btn active" data-bet="0.50">R$ 0,50</button>
+        <button class="bet-btn" data-bet="1.00">R$ 1,00</button>
+        <button class="bet-btn" data-bet="2.00">R$ 2,00</button>
+      </div>
+      <div class="custom-row"><input type="number" id="minesCustom" placeholder="Valor personalizado" min="0.10" step="0.10"><button onclick="applyCustomBet('mines')">Aplicar</button></div>
+      <button class="action-btn" id="minesAction">Apostar</button>
+    </div>
+    <div class="paytable"><h4>Como funciona</h4><div style="line-height:1.6;font-size:.72rem">Cada joia revelada aumenta o multiplicador. Saque antes de tocar numa mina. RTP ≈97%.</div></div>
+  </section>
+
+  <section id="page-bingo" class="page">
+    <div class="topbar"><button class="back-btn" onclick="showPage('home')">← Voltar</button><h2>🎱 Bingo</h2><button class="sound-toggle on">🔊</button></div>
+    <div class="bingo-draw" id="bingoDraw">Aguardando compra de cartela</div>
+    <div class="bingo-card" id="bingoCard"></div>
+    <div class="msg info" id="bingoMsg">Complete uma linha para ganhar.</div>
+    <div class="panel" style="margin-top:14px">
+      <div class="bet-row" id="bingoBets">
+        <button class="bet-btn" data-bet="0.10">R$ 0,10</button>
+        <button class="bet-btn" data-bet="0.25">R$ 0,25</button>
+        <button class="bet-btn active" data-bet="0.50">R$ 0,50</button>
+        <button class="bet-btn" data-bet="1.00">R$ 1,00</button>
+        <button class="bet-btn" data-bet="2.00">R$ 2,00</button>
+      </div>
+      <div class="custom-row"><input type="number" id="bingoCustom" placeholder="Valor personalizado" min="0.10" step="0.10"><button onclick="applyCustomBet('bingo')">Aplicar</button></div>
+      <button class="action-btn" id="bingoAction">Comprar cartela</button>
+    </div>
+    <div class="paytable"><h4>Como funciona</h4><div style="line-height:1.6;font-size:.72rem">Bolas sorteadas de 1 a 75 até completar linha. Quanto mais rápido, maior o prêmio. RTP ≈90%.</div></div>
+  </section>
+
+  <section id="page-penalty" class="page">
+    <div class="topbar"><button class="back-btn" onclick="showPage('home')">← Voltar</button><h2>⚽ Pênalti</h2><button class="sound-toggle on">🔊</button></div>
+    <div class="pen-stage">
+      <div class="pen-keeper" id="penKeeper">🧍</div>
+      <div class="pen-goal" id="penGoal">
+        <div class="pen-zone" data-zone="left">↖</div>
+        <div class="pen-zone" data-zone="center">↑</div>
+        <div class="pen-zone" data-zone="right">↗</div>
+      </div>
+      <div class="pen-ball" id="penBall">⚽</div>
+    </div>
+    <div class="pen-scores">
+      <span>Gols: <span class="v" id="penGoals">0</span>/5</span>
+      <span>Chances: <span class="v" id="penShots">0</span>/5</span>
+    </div>
+    <div class="msg info" id="penMsg">Escolha o canto para chutar.</div>
+    <div class="pen-controls" id="penControls">
+      <button class="pen-btn" data-zone="left" disabled>↖ Esquerda</button>
+      <button class="pen-btn" data-zone="center" disabled>↑ Meio</button>
+      <button class="pen-btn" data-zone="right" disabled>↗ Direita</button>
+    </div>
+    <div class="panel">
+      <div class="bet-row" id="penaltyBets">
+        <button class="bet-btn" data-bet="0.10">R$ 0,10</button>
+        <button class="bet-btn" data-bet="0.25">R$ 0,25</button>
+        <button class="bet-btn active" data-bet="0.50">R$ 0,50</button>
+        <button class="bet-btn" data-bet="1.00">R$ 1,00</button>
+        <button class="bet-btn" data-bet="2.00">R$ 2,00</button>
+      </div>
+      <div class="custom-row"><input type="number" id="penaltyCustom" placeholder="Valor personalizado" min="0.10" step="0.10"><button onclick="applyCustomBet('penalty')">Aplicar</button></div>
+      <button class="action-btn" id="penaltyAction">Apostar</button>
+    </div>
+    <div class="paytable">
+      <h4>Prêmios (por 5 chutes)</h4>
+      <div class="pt-row"><span>5 gols</span><span>10× aposta</span></div>
+      <div class="pt-row"><span>4 gols</span><span>4× aposta</span></div>
+      <div class="pt-row"><span>3 gols</span><span>1,8× aposta</span></div>
+      <div class="pt-row"><span>2 gols</span><span>devolve aposta</span></div>
+      <div class="pt-row"><span>0–1 gols</span><span>perde</span></div>
+    </div>
+  </section>
+
+  <section id="page-dice" class="page">
+    <div class="topbar"><button class="back-btn" onclick="showPage('home')">← Voltar</button><h2>🎲 Dado</h2><button class="sound-toggle on">🔊</button></div>
+    <div class="dice-stage">
+      <div class="dice-visual" id="diceVisual">🎲</div>
+      <div class="dice-range">
+        <div class="fill" id="diceFill"></div>
+        <div class="marker" id="diceMarker" style="left:50%"></div>
+        <span class="num" id="diceNum">50.00</span>
+      </div>
+      <div style="font-size:.75rem;color:var(--muted)">Alvo: <span id="diceTarget" style="color:var(--gold);font-weight:800">50.00</span></div>
+      <input type="range" id="diceSlider" min="2" max="98" value="50" step="1" style="width:100%;margin-top:8px;accent-color:#ffc542">
+    </div>
+    <div class="msg info" id="diceMsg">Escolha Acima ou Abaixo e clique em Rolar.</div>
+    <div class="dice-mode" id="diceMode">
+      <button class="dm-btn active" data-mode="under">Abaixo ↓</button>
+      <button class="dm-btn" data-mode="over">Acima ↑</button>
+    </div>
+    <div class="panel">
+      <div class="bet-row" id="diceBets">
+        <button class="bet-btn" data-bet="0.10">R$ 0,10</button>
+        <button class="bet-btn" data-bet="0.25">R$ 0,25</button>
+        <button class="bet-btn active" data-bet="0.50">R$ 0,50</button>
+        <button class="bet-btn" data-bet="1.00">R$ 1,00</button>
+        <button class="bet-btn" data-bet="2.00">R$ 2,00</button>
+      </div>
+      <div class="custom-row"><input type="number" id="diceCustom" placeholder="Valor personalizado" min="0.10" step="0.10"><button onclick="applyCustomBet('dice')">Aplicar</button></div>
+      <button class="action-btn" id="diceAction">Rolar</button>
+    </div>
+    <div class="paytable"><h4>Como funciona</h4><div style="line-height:1.6;font-size:.72rem">Resultado é um número entre 0.00 e 99.99. Escolha um alvo e se aposta em Acima ou Abaixo. RTP ≈97%.</div></div>
+  </section>
+
+  <footer>
+    <div class="foot-info">
+      NananBet é uma plataforma de entretenimento com créditos virtuais.<br>
+      Não é possível depositar, sacar ou converter créditos em dinheiro.<br>
+      Proibido para menores de 18 anos. Jogue com responsabilidade.
+    </div>
+    <button class="back-btn advertise-btn" onclick="advertiseHere()">📩 Anuncie aqui</button>
+    <div class="copyright">© nanangames — 2026</div>
+  </footer>
+</div>
+
+<div class="modal-overlay" id="adModal">
+  <div class="modal">
+    <h3>💸 Saldo esgotado</h3>
+    <p>Você ficou sem créditos. Assista a um anúncio para receber <strong style="color:var(--gold)">R$ 7,77</strong> em créditos.</p>
+    <button class="action-btn" onclick="showTestAd()">▶ Assistir anúncio</button>
+    <button class="back-btn" onclick="closeAdModal()">Agora não</button>
+  </div>
+</div>
+<div class="test-ad-overlay" id="testAdOverlay">
+  <div class="test-ad-banner">
+    <button class="test-ad-close" onclick="rewardFromAd()">✕</button>
+    <h2>📢 ANÚNCIO</h2>
+    <p>Clique no <strong>✕</strong> para fechar e receber <strong>R$ 7,77</strong> em créditos.</p>
+  </div>
+</div>
+
+<script>
+/* ============= ESTADO ============= */
+const START_BALANCE = 7.77;
+let balance = START_BALANCE;
+let adShownThisZero = false, adActive = false;
+const balanceEl = document.getElementById('balanceEl');
+function fmt(v){ return 'R$ ' + v.toFixed(2).replace('.', ','); }
+function setBalance(v, animate){
+  const wasZero = balance < 0.10;
+  balance = Math.max(0, Math.round(v*100)/100);
+  balanceEl.textContent = fmt(balance);
+  if(animate){ balanceEl.classList.add('bump'); setTimeout(()=>balanceEl.classList.remove('bump'), 180); }
+  syncButtons();
+  const isZero = balance < 0.10;
+  if(!wasZero && isZero && !adShownThisZero){ adShownThisZero = true; setTimeout(()=>{ if(balance<0.10 && !adActive) showAdModal(); }, 900); }
+  if(!isZero) adShownThisZero = false;
+}
+function showAdModal(){ adActive = true; document.getElementById('adModal').classList.add('active'); }
+function closeAdModal(){ adActive = false; document.getElementById('adModal').classList.remove('active'); }
+function showTestAd(){ document.getElementById('adModal').classList.remove('active'); document.getElementById('testAdOverlay').classList.add('active'); }
+function rewardFromAd(){
+  document.getElementById('testAdOverlay').classList.remove('active');
+  adActive = false; adShownThisZero = false;
+  setBalance(balance + 7.77, true);
+  ['slotsMsg','avMsg','tigerMsg','raspMsg','rouletteMsg','bjMsg','bacboMsg','doubleMsg','minesMsg','bingoMsg','penMsg','diceMsg']
+    .forEach(id=>toast(id,'Anúncio concluído! +R$ 7,77 em créditos.','win'));
+}
+function advertiseHere(){
+  const subject = encodeURIComponent('Anuncie na NananBet');
+  const body = encodeURIComponent(
+    'Olá equipe NananBet,\n\n' +
+    'Tenho interesse em anunciar na plataforma NananBet.\n\n' +
+    'Nome:\n' +
+    'Empresa:\n' +
+    'Telefone:\n' +
+    'Site:\n' +
+    'Formato de anúncio desejado:\n\n' +
+    'Obrigado.'
+  );
+  window.location.href = 'mailto:nanangames1@gmail.com?subject=' + subject + '&body=' + body;
+}
+function showPage(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('page-'+id).classList.add('active');
+  Sound.init();
+  window.scrollTo({top:0,behavior:'smooth'});
+  if(id === 'aviator') Aviator.enter(); else Aviator.leave();
+  if(balance < 0.10 && !adActive && !adShownThisZero){
+    adShownThisZero = true;
+    setTimeout(()=>{ if(balance<0.10 && !adActive) showAdModal(); }, 700);
+  }
+}
+/* ============= SOM ============= */
+const Sound = (()=>{
+  let ctx = null, enabled = true;
+  function init(){
+    if(ctx){ if(ctx.state==='suspended') ctx.resume(); return; }
+    try{ ctx = new (window.AudioContext||window.webkitAudioContext)(); }catch(e){ ctx=null; }
+  }
+  function tone(freq, dur, type, vol, slideTo){
+    if(!enabled || !ctx) return;
+    const t = ctx.currentTime;
+    const o = ctx.createOscillator(); const g = ctx.createGain();
+    o.type = type || 'sine';
+    o.frequency.setValueAtTime(freq, t);
+    if(slideTo) o.frequency.exponentialRampToValueAtTime(slideTo, t+dur);
+    g.gain.setValueAtTime(0.0001, t);
+    g.gain.exponentialRampToValueAtTime(vol||0.08, t+0.008);
+    g.gain.exponentialRampToValueAtTime(0.0001, t+dur);
+    o.connect(g); g.connect(ctx.destination);
+    o.start(t); o.stop(t+dur+0.02);
+  }
+  function noise(dur, vol){
+    if(!enabled || !ctx) return;
+    const t = ctx.currentTime;
+    const buf = ctx.createBuffer(1, ctx.sampleRate*dur, ctx.sampleRate);
+    const d = buf.getChannelData(0);
+    for(let i=0;i<d.length;i++) d[i] = (Math.random()*2-1) * Math.pow(1-i/d.length, 2);
+    const src = ctx.createBufferSource(); src.buffer = buf;
+    const g = ctx.createGain(); g.gain.value = vol || 0.12;
+    const f = ctx.createBiquadFilter(); f.type='lowpass'; f.frequency.value = 1200;
+    src.connect(f); f.connect(g); g.connect(ctx.destination);
+    src.start(t);
+  }
+  return {
+    init,
+    setEnabled(v){ enabled = v; if(v) init(); },
+    isEnabled(){ return enabled; },
+    tick(){ tone(600+Math.random()*400, 0.025, 'square', 0.018); },
+    reelStop(){ tone(520, 0.10, 'triangle', 0.10, 180); noise(0.06, 0.05); },
+    spinStart(){ tone(180, 0.18, 'sawtooth', 0.06, 420); },
+    win(level){
+      const sets = {1:[523,659,784],2:[523,659,784,1047],3:[523,659,784,1047,1319,1568]};
+      const notes = sets[level] || sets[1];
+      notes.forEach((n,i)=>setTimeout(()=>tone(n,0.26,'triangle',0.12), i*70));
+      if(level>=2) setTimeout(()=>noise(0.35,0.07), 60);
+    },
+    lose(){ tone(200, 0.16, 'sawtooth', 0.05, 110); },
+    cashout(){ [660,880,1174].forEach((n,i)=>setTimeout(()=>tone(n,0.2,'sine',0.11), i*60)); },
+    takeoff(){ tone(160, 0.6, 'sawtooth', 0.05, 520); },
+    crash(){ tone(320, 0.5, 'sawtooth', 0.14, 60); noise(0.4, 0.16); },
+    bet(){ tone(880, 0.07, 'sine', 0.09); },
+    card(){ tone(440, 0.05, 'triangle', 0.07); },
+    gem(){ tone(880, 0.08, 'sine', 0.09); tone(1320, 0.08, 'sine', 0.06); },
+    scratch(){ noise(0.12, 0.08); tone(1200, 0.08, 'highpass', 0.04); },
+    dice(){ noise(0.25, 0.15); tone(300, 0.15, 'square', 0.06, 120); },
+    whistle(){ tone(1800, 0.35, 'sine', 0.09); }
+  };
+})();
+function toast(elId, text, cls){
+  const el = document.getElementById(elId); if(!el) return;
+  el.textContent = text;
+  el.className = 'msg ' + (cls || 'info');
+  if(cls === 'win' || cls === 'lose'){ el.classList.add('pop'); setTimeout(()=>el.classList.remove('pop'), 360); }
+}
+/* ============= APOSTAS ============= */
+const bets = { slots:0.50, aviator:0.50, tiger:0.50, rasp:0.50, roulette:0.50, blackjack:0.50, bacbo:0.50, double:0.50, mines:0.50, bingo:0.50, penalty:0.50, dice:0.50 };
+function initBetControls(prefix, key){
+  const row = document.getElementById(prefix + 'Bets'); if(!row) return;
+  row.querySelectorAll('.bet-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      row.querySelectorAll('.bet-btn').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      bets[key] = parseFloat(btn.dataset.bet);
+      const ci = document.getElementById((prefix==='bj'?'bj':prefix) + 'Custom');
+      if(ci) ci.value = '';
+      onBetChange(key); Sound.bet();
+    });
+  });
+}
+function applyCustomBet(key){
+  const map = { slots:'slotsCustom', aviator:'avCustom', tiger:'tigerCustom', rasp:'raspCustom', roulette:'rouletteCustom', blackjack:'bjCustom', bacbo:'bacboCustom', double:'doubleCustom', mines:'minesCustom', bingo:'bingoCustom', penalty:'penaltyCustom', dice:'diceCustom' };
+  const msgMap = { slots:'slotsMsg', aviator:'avMsg', tiger:'tigerMsg', rasp:'raspMsg', roulette:'rouletteMsg', blackjack:'bjMsg', bacbo:'bacboMsg', double:'doubleMsg', mines:'minesMsg', bingo:'bingoMsg', penalty:'penMsg', dice:'diceMsg' };
+  const input = document.getElementById(map[key]);
+  const v = parseFloat(String(input.value).replace(',', '.'));
+  if(!isFinite(v) || v < 0.10){ toast(msgMap[key], 'Valor mínimo: R$ 0,10', 'lose'); return; }
+  if(v > 100){ toast(msgMap[key], 'Valor máximo: R$ 100,00', 'lose'); return; }
+  bets[key] = Math.round(v*100)/100;
+  const row = document.getElementById(key === 'blackjack' ? 'bjBets' : key+'Bets');
+  if(row) row.querySelectorAll('.bet-btn').forEach(b=>b.classList.remove('active'));
+  onBetChange(key); Sound.bet();
+}
+function onBetChange(key){
+  if(key === 'aviator') Aviator.refreshBetDisplay();
+  if(key === 'mines') Mines.refreshBetDisplay();
+  if(key === 'dice') Dice.refresh();
+  syncButtons();
+}
+function syncButtons(){
+  try {
+    const spinBtn = document.getElementById('spinBtn'); if(spinBtn) spinBtn.disabled = Slots.spinning || balance < bets.slots;
+    const avBtn = document.getElementById('avAction'); if(avBtn) Aviator.syncButton();
+    const tBtn = document.getElementById('tigerBtn'); if(tBtn) tBtn.disabled = Tiger.spinning || balance < bets.tiger;
+    const rBtn = document.getElementById('rouletteBtn'); if(rBtn) rBtn.disabled = Roulette.spinning || balance < bets.roulette || !Roulette.selected;
+    const bjBtn = document.getElementById('bjAction'); if(bjBtn) Blackjack.syncButton();
+    const mBtn = document.getElementById('minesAction'); if(mBtn) Mines.syncButton();
+    const raspBtn = document.getElementById('raspAction'); if(raspBtn) Raspadinha.syncButton();
+    const bacboBtn = document.getElementById('bacboAction'); if(bacboBtn) BacBo.syncButton();
+    const dblBtn = document.getElementById('doubleAction'); if(dblBtn) dblBtn.disabled = Double.spinning || balance < bets.double;
+    const bingoBtn = document.getElementById('bingoAction'); if(bingoBtn) Bingo.syncButton();
+    const penBtn = document.getElementById('penaltyAction'); if(penBtn) Penalty.syncButton();
+    const diceBtn = document.getElementById('diceAction'); if(diceBtn) diceBtn.disabled = Dice.spinning || balance < bets.dice;
+  } catch(e) { /* módulos ainda em inicialização */ }
+}
+document.querySelectorAll('.sound-toggle').forEach(btn=>{
+  btn.addEventListener('click', function(){
+    const on = !Sound.isEnabled();
+    Sound.setEnabled(on);
+    this.classList.toggle('on', on);
+    this.textContent = on ? '🔊' : '🔇';
+  });
+});
+
+/* ================ SLOTS ================ */
+const Slots = (()=>{
+  const S = [{s:'🍒',w:30,pay:7},{s:'🍋',w:25,pay:13},{s:'🔔',w:20,pay:27},{s:'💎',w:14,pay:40},{s:'7️⃣',w:8,pay:54},{s:'⭐',w:3,pay:78}];
+  const TW = S.reduce((a,b)=>a+b.w,0);
+  const els = [0,1,2].map(i=>document.getElementById('r'+i));
+  let spinning = false;
+  function pick(){ let r = Math.random()*TW; for(const x of S){ r -= x.w; if(r<=0) return x.s; } return S[0].s; }
+  function pay(s){ const f = S.find(x=>x.s===s); return f ? f.pay : 0; }
+  function set(el, s){ el.querySelector('.sym').textContent = s; }
+  function spin(){
+    if(spinning) return;
+    const bet = bets.slots; if(balance < bet){ toast('slotsMsg','Saldo insuficiente.','lose'); return; }
+    spinning = true; syncButtons(); setBalance(balance - bet, false);
+    toast('slotsMsg','Girando...','info'); Sound.spinStart();
+    els.forEach(el=>{ el.classList.remove('win'); el.classList.add('spin'); });
+    const res = [pick(), pick(), pick()];
+    els.forEach((el,i)=>{
+      const iv = setInterval(()=>{ set(el, pick()); Sound.tick(); }, 55);
+      setTimeout(()=>{
+        clearInterval(iv); el.classList.remove('spin'); set(el, res[i]);
+        el.classList.add('land'); Sound.reelStop();
+        setTimeout(()=>el.classList.remove('land'), 240);
+        if(i === 2) settle(res, bet);
+      }, 620 + i*380);
+    });
+  }
+  function settle(res, bet){
+    let win = 0, mult = 0;
+    if(res[0]===res[1] && res[1]===res[2]){ mult = pay(res[0]); win = Math.round(bet*mult*100)/100; }
+    if(win > 0){
+      setBalance(balance + win, true);
+      els.forEach(el=>el.classList.add('win'));
+      Sound.win(mult>=40?3:mult>=20?2:1);
+      toast('slotsMsg', `Ganhou ${fmt(win)}! (${mult}×)`, 'win');
+      setTimeout(()=>els.forEach(el=>el.classList.remove('win')), 2600);
+    } else { Sound.lose(); toast('slotsMsg','Não foi dessa vez.','lose'); }
+    spinning = false; syncButtons();
+  }
+  document.getElementById('spinBtn').addEventListener('click', spin);
+  return { get spinning(){ return spinning; } };
+})();
+
+/* ================ AVIATOR ================ */
+const Aviator = (()=>{
+  const canvas = document.getElementById('planeCanvas');
+  const ctx = canvas.getContext('2d');
+  const multDisplay = document.getElementById('multDisplay');
+  const multSub = document.getElementById('multSub');
+  const historyStrip = document.getElementById('historyStrip');
+  const avAction = document.getElementById('avAction');
+  let W=0,H=0,dpr=1,state='idle',betPlaced=false,cashedOut=false,crashPoint=1,roundStart=0,multiplier=1,rafId=null,crashTimeout=null,waitStart=0,active=false;
+  const WAIT_MS = 4500, history = [];
+  function resize(){
+    const r = canvas.getBoundingClientRect();
+    dpr = Math.min(window.devicePixelRatio||1, 2);
+    W = r.width; H = r.height;
+    canvas.width = Math.round(W*dpr); canvas.height = Math.round(H*dpr);
+    ctx.setTransform(dpr,0,0,dpr,0,0); render();
+  }
+  window.addEventListener('resize', ()=>{ if(active) resize(); });
+  function genCrash(){ const r = Math.random(); if(r<0.01) return 1.00; const raw = 0.95/(1-r); return Math.max(1.00, Math.floor(Math.min(raw,120)*100)/100); }
+  function multAt(ms){ return Math.pow(1.16, ms/1000); }
+  function curve(p){ const px=26, py=26; return [px+p*(W-px*2), (H-py)-Math.pow(p,1.45)*(H-py*2)]; }
+  function render(){
+    if(!W||!H) return;
+    ctx.clearRect(0,0,W,H);
+    ctx.strokeStyle = 'rgba(255,255,255,0.035)'; ctx.lineWidth = 1;
+    for(let i=1;i<8;i++){ const x=(W/8)*i; ctx.beginPath(); ctx.moveTo(x,0); ctx.lineTo(x,H); ctx.stroke(); }
+    for(let i=1;i<5;i++){ const y=(H/5)*i; ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(W,y); ctx.stroke(); }
+    const cur = state==='flying' ? multiplier : (state==='crashed' ? crashPoint : 1);
+    const prog = Math.min(1, Math.log(Math.max(cur,1))/Math.log(25));
+    if(prog > 0.002){
+      const g = ctx.createLinearGradient(0,H,W,0);
+      if(state==='crashed'){ g.addColorStop(0,'rgba(255,77,94,0.15)'); g.addColorStop(1,'#ff4d5e'); }
+      else { g.addColorStop(0,'rgba(255,197,66,0.15)'); g.addColorStop(1,'#ffc542'); }
+      ctx.beginPath();
+      for(let i=0;i<=60;i++){ const [x,y] = curve((i/60)*prog); if(i===0) ctx.moveTo(x,y); else ctx.lineTo(x,y); }
+      ctx.strokeStyle = g; ctx.lineWidth = 3.5; ctx.lineCap = 'round';
+      ctx.shadowBlur = 18; ctx.shadowColor = state==='crashed' ? 'rgba(255,77,94,0.8)' : 'rgba(255,197,66,0.8)';
+      ctx.stroke(); ctx.shadowBlur = 0;
+      const [ex] = curve(prog); const [sx] = curve(0);
+      ctx.lineTo(ex,H); ctx.lineTo(sx,H); ctx.closePath();
+      ctx.fillStyle = state==='crashed' ? 'rgba(255,77,94,0.07)' : 'rgba(255,197,66,0.07)';
+      ctx.fill();
+    }
+    const [px,py] = curve(prog);
+    ctx.font = '26px system-ui, "Apple Color Emoji", "Segoe UI Emoji"';
+    ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    if(state==='crashed'){ ctx.globalAlpha = 0.55; ctx.fillText('💥', px, py); ctx.globalAlpha = 1; }
+    else { ctx.shadowBlur = 14; ctx.shadowColor = 'rgba(255,255,255,0.5)'; ctx.fillText('✈️', px, py); ctx.shadowBlur = 0; }
+  }
+  function loop(){
+    if(state !== 'flying') return;
+    multiplier = multAt(performance.now() - roundStart);
+    if(multiplier >= crashPoint){ multiplier = crashPoint; doCrash(); return; }
+    multDisplay.textContent = multiplier.toFixed(2) + '×';
+    document.getElementById('avPotential').textContent = fmt(Math.round(bets.aviator*multiplier*100)/100);
+    render(); rafId = requestAnimationFrame(loop);
+  }
+  function startWaiting(){
+    state = 'waiting'; betPlaced = false; cashedOut = false; multiplier = 1;
+    crashPoint = genCrash();
+    multDisplay.textContent = '1.00×'; multDisplay.className = 'mult-display';
+    multSub.textContent = 'Aguardando apostas';
+    document.getElementById('avPotential').textContent = '—';
+    render(); syncButton();
+    waitStart = performance.now();
+    const tick = ()=>{ if(state!=='waiting') return; const left = Math.max(0, WAIT_MS - (performance.now()-waitStart)); multSub.textContent = 'Decolando em ' + (left/1000).toFixed(1) + 's'; if(left>0) requestAnimationFrame(tick); };
+    tick();
+    setTimeout(()=>{ if(state==='waiting') startFlight(); }, WAIT_MS);
+  }
+  function startFlight(){
+    state = 'flying'; roundStart = performance.now(); multiplier = 1;
+    multDisplay.className = 'mult-display flying';
+    multSub.textContent = 'Em voo — saque agora';
+    Sound.takeoff(); syncButton(); loop();
+  }
+  function doCrash(){
+    state = 'crashed'; cancelAnimationFrame(rafId); Sound.crash();
+    multDisplay.textContent = multiplier.toFixed(2) + '×';
+    multDisplay.className = 'mult-display crashed';
+    if(betPlaced && !cashedOut){ multSub.textContent = 'Você perdeu a aposta'; toast('avMsg', `Caiu em ${multiplier.toFixed(2)}× — aposta perdida.`, 'lose'); }
+    else if(cashedOut){ multSub.textContent = 'Você sacou a tempo'; }
+    else { multSub.textContent = 'Não apostou nesta rodada'; }
+    pushHistory(multiplier); render(); syncButton();
+    crashTimeout = setTimeout(()=>{ if(state==='crashed') startWaiting(); }, 2600);
+  }
+  function pushHistory(m){
+    history.unshift(m); if(history.length>14) history.pop();
+    historyStrip.innerHTML = history.map(v=>{ const cls = v<2?'low':v<10?'mid':'high'; return `<span class="h-chip ${cls}">${v.toFixed(2)}×</span>`; }).join('');
+  }
+  function action(){
+    Sound.init();
+    if(state==='waiting' && !betPlaced){
+      const bet = bets.aviator; if(balance < bet){ toast('avMsg','Saldo insuficiente.','lose'); return; }
+      setBalance(balance - bet, false); betPlaced = true; Sound.bet();
+      toast('avMsg', `Aposta de ${fmt(bet)} confirmada.`, 'info'); syncButton(); return;
+    }
+    if(state==='flying' && betPlaced && !cashedOut){
+      cashedOut = true;
+      const win = Math.round(bets.aviator*multiplier*100)/100;
+      setBalance(balance + win, true); Sound.cashout();
+      toast('avMsg', `Saque em ${multiplier.toFixed(2)}× — ganhou ${fmt(win)}!`, 'win'); syncButton();
+    }
+  }
+  function syncButton(){
+    if(!avAction) return;
+    avAction.classList.remove('cash','danger');
+    if(state==='waiting' && !betPlaced){ avAction.textContent = `Apostar ${fmt(bets.aviator)}`; avAction.disabled = balance < bets.aviator; }
+    else if(state==='waiting' && betPlaced){ avAction.textContent = 'Aposta confirmada'; avAction.disabled = true; }
+    else if(state==='flying' && betPlaced && !cashedOut){
+      avAction.textContent = `Sacar ${multiplier.toFixed(2)}× (${fmt(Math.round(bets.aviator*multiplier*100)/100)})`;
+      avAction.classList.add('cash'); avAction.disabled = false;
+    }
+    else if(state==='flying'){ avAction.textContent = 'Em voo...'; avAction.classList.add('danger'); avAction.disabled = true; }
+    else { avAction.textContent = 'Próxima rodada...'; avAction.classList.add('danger'); avAction.disabled = true; }
+  }
+  function refreshBetDisplay(){ document.getElementById('avBetDisplay').textContent = fmt(bets.aviator); syncButton(); }
+  avAction.addEventListener('click', action);
+  return {
+    enter(){ active = true; Sound.init(); requestAnimationFrame(()=>resize()); refreshBetDisplay(); if(state==='idle') startWaiting(); },
+    leave(){ active = false; cancelAnimationFrame(rafId); clearTimeout(crashTimeout); },
+    refreshBetDisplay, syncButton
+  };
+})();
+
+/* ================ TIGER ================ */
+const Tiger = (()=>{
+  const S = [{s:'🐯',w:5,pay:30},{s:'💰',w:10,pay:12},{s:'🧧',w:15,pay:5},{s:'🎁',w:20,pay:3},{s:'🍊',w:25,pay:2},{s:'🍀',w:25,pay:1}];
+  const TW = S.reduce((a,b)=>a+b.w,0);
+  const L = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+  const cells = [...document.querySelectorAll('.tiger-cell')];
+  let spinning = false;
+  function pick(){ let r = Math.random()*TW; for(const x of S){ r -= x.w; if(r<=0) return x.s; } return S[0].s; }
+  function pay(s){ const f = S.find(x=>x.s===s); return f ? f.pay : 0; }
+  function set(el, s){ el.querySelector('.sym').textContent = s; }
+  function spin(){
+    if(spinning) return;
+    const bet = bets.tiger; if(balance < bet){ toast('tigerMsg','Saldo insuficiente.','lose'); return; }
+    spinning = true; syncButtons(); setBalance(balance - bet, false);
+    toast('tigerMsg','Girando...','info'); Sound.spinStart();
+    cells.forEach(c=>{ c.classList.remove('win'); c.classList.add('spin'); });
+    const res = Array.from({length:9}, pick);
+    cells.forEach((c,i)=>{
+      const iv = setInterval(()=>{ set(c, pick()); Sound.tick(); }, 55);
+      setTimeout(()=>{
+        clearInterval(iv); c.classList.remove('spin'); set(c, res[i]);
+        c.classList.add('land'); Sound.reelStop();
+        setTimeout(()=>c.classList.remove('land'), 240);
+        if(i === 8) settle(res, bet);
+      }, 500 + i*55);
+    });
+  }
+  function settle(res, bet){
+    let total = 0; const wc = new Set();
+    for(const [a,b,c] of L){
+      if(res[a]===res[b] && res[b]===res[c]){
+        const m = pay(res[a]);
+        if(m>0){ total += bet*m; [a,b,c].forEach(i=>wc.add(i)); }
+      }
+    }
+    total = Math.round(total*100)/100;
+    if(total > 0){
+      setBalance(balance + total, true);
+      wc.forEach(i=>cells[i].classList.add('win'));
+      Sound.win(total>=bet*20?3:total>=bet*5?2:1);
+      toast('tigerMsg', `Ganhou ${fmt(total)}!`, 'win');
+      setTimeout(()=>cells.forEach(c=>c.classList.remove('win')), 2600);
+    } else { Sound.lose(); toast('tigerMsg','Nenhuma linha completa.','lose'); }
+    spinning = false; syncButtons();
+  }
+  document.getElementById('tigerBtn').addEventListener('click', spin);
+  return { get spinning(){ return spinning; } };
+})();
+
+/* ================ RASPADINHA ================ */
+const Raspadinha = (()=>{
+  const S = [{s:'💎',w:5,pay:25},{s:'7️⃣',w:8,pay:15},{s:'🔔',w:12,pay:8},{s:'🍒',w:20,pay:5},{s:'🍋',w:25,pay:3},{s:'🍀',w:30,pay:2}];
+  const TW = S.reduce((a,b)=>a+b.w,0);
+  const grid = document.getElementById('raspGrid');
+  let state = 'idle';
+  let symbols = [], revealed = 0, currentBet = 0, cells = [];
+  function build(){
+    grid.innerHTML = ''; cells = [];
+    for(let i=0;i<9;i++){
+      const cell = document.createElement('div');
+      cell.className = 'rasp-cell';
+      cell.innerHTML = `<div class="rasp-face"><span>?</span></div><div class="rasp-cover">❓</div>`;
+      cell.addEventListener('click', ()=>scratch(i));
+      grid.appendChild(cell); cells.push(cell);
+    }
+  }
+  build();
+  function pick(){ let r = Math.random()*TW; for(const x of S){ r -= x.w; if(r<=0) return x.s; } return S[0].s; }
+  function pay(s){ const f = S.find(x=>x.s===s); return f ? f.pay : 0; }
+  function syncButton(){
+    const btn = document.getElementById('raspAction'); if(!btn) return;
+    btn.classList.remove('cash','danger');
+    if(state === 'idle'){ btn.textContent = `Comprar cartela ${fmt(bets.rasp)}`; btn.disabled = balance < bets.rasp; }
+    else if(state === 'playing'){ btn.textContent = 'Raspe as casas ↑'; btn.disabled = true; btn.classList.add('danger'); }
+    else { btn.textContent = 'Nova cartela'; btn.disabled = false; }
+  }
+  function start(){
+    if(state !== 'idle') return;
+    const bet = bets.rasp; if(balance < bet){ toast('raspMsg','Saldo insuficiente.','lose'); return; }
+    setBalance(balance - bet, false); currentBet = bet;
+    symbols = Array.from({length:9}, pick);
+    revealed = 0; state = 'playing';
+    cells.forEach(c=>{ c.className = 'rasp-cell'; c.querySelector('.rasp-face').innerHTML = '<span>?</span>'; });
+    toast('raspMsg','Clique em cada casa para raspar.','info');
+    Sound.bet(); syncButton();
+  }
+  function scratch(i){
+    if(state !== 'playing') return;
+    const cell = cells[i]; if(cell.classList.contains('revealed')) return;
+    cell.classList.add('revealed');
+    cell.querySelector('.rasp-face').innerHTML = `<span>${symbols[i]}</span>`;
+    Sound.scratch(); revealed++;
+    if(revealed === 9) settle();
+    else toast('raspMsg', `${revealed}/9 casas raspadas.`, 'info');
+  }
+  function settle(){
+    const counts = {};
+    symbols.forEach(s=>counts[s] = (counts[s]||0) + 1);
+    let totalWin = 0, winningSymbols = [];
+    for(const s in counts){
+      if(counts[s] >= 3){ const m = pay(s); if(m > 0){ totalWin += currentBet*m; winningSymbols.push(s); } }
+    }
+    totalWin = Math.round(totalWin*100)/100;
+    if(totalWin > 0){
+      setBalance(balance + totalWin, true);
+      cells.forEach((c,i)=>{ if(winningSymbols.includes(symbols[i])) c.classList.add('win'); });
+      Sound.win(totalWin>=currentBet*15?3:totalWin>=currentBet*5?2:1);
+      toast('raspMsg', `Ganhou ${fmt(totalWin)}!`, 'win');
+    } else {
+      Sound.lose(); toast('raspMsg','Nenhum trio. Tente outra cartela.','lose');
+    }
+    state = 'ended'; syncButton();
+  }
+  function action(){
+    Sound.init();
+    if(state === 'idle') start();
+    else if(state === 'ended'){ state = 'idle'; cells.forEach(c=>{ c.className = 'rasp-cell'; c.querySelector('.rasp-face').innerHTML = '<span>?</span>'; }); toast('raspMsg','Aposte e clique em comprar cartela.','info'); syncButton(); }
+  }
+  document.getElementById('raspAction').addEventListener('click', action);
+  syncButton();
+  return { syncButton };
+})();
+
+/* ================ ROLETA ================ */
+const Roulette = (()=>{
+  const REDS = [1,3,5,7,9,12,14,16,18,19,21,23,25,27,30,32,34,36];
+  const numEl = document.getElementById('rouletteNumber');
+  let selected = null, spinning = false;
+  document.querySelectorAll('#rouletteBets .rb-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      if(spinning) return;
+      document.querySelectorAll('#rouletteBets .rb-btn').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active'); selected = btn.dataset.rb;
+      Sound.bet(); syncButtons();
+    });
+  });
+  function colorOf(n){ if(n===0) return 'green'; return REDS.includes(n) ? 'red' : 'black'; }
+  function wins(n, bet){
+    if(bet==='red') return colorOf(n)==='red';
+    if(bet==='black') return colorOf(n)==='black';
+    if(bet==='odd') return n!==0 && n%2===1;
+    if(bet==='even') return n!==0 && n%2===0;
+    if(bet==='low') return n>=1 && n<=18;
+    if(bet==='high') return n>=19 && n<=36;
+    return false;
+  }
+  function spin(){
+    if(spinning || !selected) return;
+    const bet = bets.roulette; if(balance < bet){ toast('rouletteMsg','Saldo insuficiente.','lose'); return; }
+    spinning = true; syncButtons(); setBalance(balance - bet, false);
+    toast('rouletteMsg','Girando...','info'); Sound.spinStart();
+    numEl.className = 'roulette-number spinning';
+    let elapsed = 0; const total = 2200;
+    const iv = setInterval(()=>{
+      elapsed += 80;
+      numEl.textContent = Math.floor(Math.random()*37);
+      Sound.tick();
+      if(elapsed >= total){
+        clearInterval(iv);
+        const r = Math.floor(Math.random()*37);
+        numEl.textContent = r;
+        numEl.className = 'roulette-number ' + colorOf(r);
+        settle(r, bet);
+      }
+    }, 80);
+  }
+  function settle(result, bet){
+    const won = wins(result, selected);
+    const color = colorOf(result);
+    const labels = { red:'Vermelho', black:'Preto', odd:'Ímpar', even:'Par', low:'1–18', high:'19–36' };
+    const ic = color==='red'?'🔴':color==='black'?'⚫':'🟢';
+    if(won){
+      const win = Math.round(bet*2*100)/100;
+      setBalance(balance + win, true); Sound.win(2);
+      toast('rouletteMsg', `${result} ${ic} — ${labels[selected]}! Ganhou ${fmt(win)}.`, 'win');
+    } else { Sound.lose(); toast('rouletteMsg', `${result} ${ic} — perdeu.`, 'lose'); }
+    spinning = false; syncButtons();
+  }
+  document.getElementById('rouletteBtn').addEventListener('click', spin);
+  return { get spinning(){ return spinning; }, get selected(){ return selected; } };
+})();
+
+/* ================ BLACKJACK ================ */
+const Blackjack = (()=>{
+  const SUITS = [{s:'♠',c:'black'},{s:'♥',c:'red'},{s:'♦',c:'red'},{s:'♣',c:'black'}];
+  const VALUES = ['A','2','3','4','5','6','7','8','9','10','J','Q','K'];
+  const pcEl = document.getElementById('playerCards'), dcEl = document.getElementById('dealerCards');
+  const psEl = document.getElementById('playerScore'), dsEl = document.getElementById('dealerScore');
+  const aBtn = document.getElementById('bjAction'), hBtn = document.getElementById('bjHit'), sBtn = document.getElementById('bjStand');
+  let deck=[], player=[], dealer=[], state='betting', currentBet=0, hidden=true;
+  function fresh(){ const d = []; for(const s of SUITS) for(const v of VALUES) d.push({v, s:s.s, c:s.c}); for(let i=d.length-1;i>0;i--){ const j = Math.floor(Math.random()*(i+1)); [d[i],d[j]]=[d[j],d[i]]; } return d; }
+  function draw(){ return deck.pop(); }
+  function val(cards){ let sum=0, aces=0; for(const c of cards){ if(c.v==='A'){ sum+=11; aces++; } else if(['J','Q','K'].includes(c.v)) sum+=10; else sum += parseInt(c.v); } while(sum>21 && aces>0){ sum-=10; aces--; } return sum; }
+  function cardHtml(c, h){ if(h) return `<div class="card back"></div>`; return `<div class="card ${c.c}"><span class="r">${c.v}</span><span class="s">${c.s}</span></div>`; }
+  function render(){
+    pcEl.innerHTML = player.map(c=>cardHtml(c,false)).join('');
+    dcEl.innerHTML = dealer.map((c,i)=>cardHtml(c, hidden && i===1)).join('');
+    psEl.textContent = player.length ? `(${val(player)})` : '';
+    if(dealer.length){ dsEl.textContent = hidden ? `(${val([dealer[0]])} + ?)` : `(${val(dealer)})`; }
+    else dsEl.textContent = '';
+  }
+  function start(){
+    if(state !== 'betting') return;
+    const bet = bets.blackjack; if(balance < bet){ toast('bjMsg','Saldo insuficiente.','lose'); return; }
+    setBalance(balance - bet, false); currentBet = bet;
+    deck = fresh(); player = [draw(), draw()]; dealer = [draw(), draw()]; hidden = true; state = 'playing';
+    Sound.card(); setTimeout(()=>Sound.card(), 150); render();
+    if(val(player) === 21){
+      hidden = false; render();
+      if(val(dealer) === 21){ setBalance(balance + currentBet, true); toast('bjMsg','Empate! Aposta devolvida.','info'); }
+      else { const w = Math.round(currentBet*2.5*100)/100; setBalance(balance + w, true); Sound.win(3); toast('bjMsg', `Blackjack! Ganhou ${fmt(w)}!`, 'win'); }
+      end(); return;
+    }
+    toast('bjMsg','Pedir ou parar?','info'); syncButton();
+  }
+  function hit(){
+    if(state !== 'playing') return;
+    player.push(draw()); Sound.card(); render();
+    const v = val(player);
+    if(v > 21){ hidden = false; render(); Sound.lose(); toast('bjMsg', `Estourou com ${v}. Perdeu ${fmt(currentBet)}.`, 'lose'); end(); return; }
+    if(v === 21) stand(); else syncButton();
+  }
+  function stand(){
+    if(state !== 'playing') return;
+    hidden = false; render();
+    const play = ()=>{
+      if(val(dealer) < 17){ dealer.push(draw()); Sound.card(); render(); setTimeout(play, 450); }
+      else finish();
+    };
+    setTimeout(play, 400);
+  }
+  function finish(){
+    const pv = val(player), dv = val(dealer);
+    if(dv>21 || pv>dv){
+      const w = Math.round(currentBet*2*100)/100;
+      setBalance(balance + w, true); Sound.win(2);
+      toast('bjMsg', `Você ganhou! ${pv} vs ${dv} — +${fmt(w)}.`, 'win');
+    } else if(pv === dv){ setBalance(balance + currentBet, true); toast('bjMsg', `Empate em ${pv}. Aposta devolvida.`, 'info'); }
+    else { Sound.lose(); toast('bjMsg', `Banca venceu: ${dv} vs ${pv}. Perdeu ${fmt(currentBet)}.`, 'lose'); }
+    end();
+  }
+  function end(){ state = 'ended'; hBtn.style.display = 'none'; sBtn.style.display = 'none'; aBtn.style.display = 'block'; syncButton(); }
+  function action(){
+    Sound.init();
+    if(state === 'betting') start();
+    else if(state === 'ended'){
+      state = 'betting'; player = []; dealer = []; psEl.textContent=''; dsEl.textContent='';
+      pcEl.innerHTML=''; dcEl.innerHTML='';
+      toast('bjMsg','Faça sua aposta.','info'); syncButton();
+    }
+  }
+  function syncButton(){
+    if(!aBtn) return;
+    if(state === 'betting'){ aBtn.textContent = `Apostar ${fmt(bets.blackjack)}`; aBtn.disabled = balance < bets.blackjack; aBtn.style.display = 'block'; hBtn.style.display = 'none'; sBtn.style.display = 'none'; }
+    else if(state === 'playing'){ aBtn.style.display = 'none'; hBtn.style.display = 'block'; sBtn.style.display = 'block'; hBtn.disabled = false; sBtn.disabled = false; }
+    else { aBtn.style.display = 'block'; aBtn.textContent = 'Nova rodada'; aBtn.disabled = false; hBtn.style.display = 'none'; sBtn.style.display = 'none'; }
+  }
+  aBtn.addEventListener('click', action);
+  hBtn.addEventListener('click', hit);
+  sBtn.addEventListener('click', stand);
+  syncButton();
+  return { syncButton };
+})();
+
+/* ================ MINES ================ */
+const Mines = (()=>{
+  const grid = document.getElementById('minesGrid');
+  const multDisplay = document.getElementById('minesMultDisplay');
+  const actionBtn = document.getElementById('minesAction');
+  const TOTAL = 25, MINES = 3;
+  let state='idle', mines=[], revealed=new Set(), currentBet=0, tiles=[];
+  function build(){ grid.innerHTML=''; tiles=[];
+    for(let i=0;i<TOTAL;i++){ const t = document.createElement('div'); t.className='mine-tile'; t.dataset.i=i; t.addEventListener('click', ()=>click(i)); grid.appendChild(t); tiles.push(t); }
+  }
+  build();
+  function mult(k){ if(k===0) return 1; let p = 1; for(let i=0;i<k;i++) p *= (TOTAL-MINES-i)/(TOTAL-i); return Math.max(1.01, 0.97/p); }
+  function refreshBetDisplay(){ document.getElementById('minesBetDisplay').textContent = fmt(bets.mines); syncButton(); }
+  function syncButton(){
+    if(!actionBtn) return;
+    actionBtn.classList.remove('cash','danger');
+    if(state === 'idle'){ actionBtn.textContent = `Apostar ${fmt(bets.mines)}`; actionBtn.disabled = balance < bets.mines; }
+    else if(state === 'playing'){
+      if(revealed.size === 0){ actionBtn.textContent = 'Clique em uma casa'; actionBtn.disabled = true; actionBtn.classList.add('danger'); }
+      else { const m = mult(revealed.size); const w = Math.round(currentBet*m*100)/100; actionBtn.textContent = `Sacar ${fmt(w)} (${m.toFixed(2)}×)`; actionBtn.disabled = false; actionBtn.classList.add('cash'); }
+    } else { actionBtn.textContent = 'Nova rodada'; actionBtn.disabled = false; }
+  }
+  function start(){
+    if(state !== 'idle') return;
+    const bet = bets.mines; if(balance < bet){ toast('minesMsg','Saldo insuficiente.','lose'); return; }
+    setBalance(balance - bet, false); currentBet = bet;
+    const pool = [...Array(TOTAL).keys()]; mines = [];
+    for(let i=0;i<MINES;i++){ const j = Math.floor(Math.random()*pool.length); mines.push(pool.splice(j,1)[0]); }
+    revealed = new Set();
+    tiles.forEach(t=>{ t.className = 'mine-tile'; t.textContent = ''; });
+    state = 'playing'; multDisplay.textContent = '1.00×';
+    toast('minesMsg','Clique nas casas. Fuja das 3 minas!','info');
+    Sound.bet(); syncButton();
+  }
+  function click(i){
+    if(state !== 'playing' || revealed.has(i)) return;
+    if(mines.includes(i)){
+      tiles[i].classList.add('mine','revealed'); tiles[i].textContent = '💣';
+      Sound.crash();
+      mines.forEach(m=>{ if(m!==i){ tiles[m].classList.add('mine','revealed','dim'); tiles[m].textContent = '💣'; } });
+      tiles.forEach((t, idx)=>{ if(!revealed.has(idx) && !mines.includes(idx)) t.classList.add('dim'); });
+      toast('minesMsg', `💥 Mina! Perdeu ${fmt(currentBet)}.`, 'lose');
+      state = 'ended'; syncButton(); return;
+    }
+    revealed.add(i); tiles[i].classList.add('safe','revealed'); tiles[i].textContent = '💎'; Sound.gem();
+    if(revealed.size === TOTAL - MINES){ cashOut(); return; }
+    const m = mult(revealed.size);
+    multDisplay.textContent = m.toFixed(2) + '×';
+    toast('minesMsg', `${revealed.size} joia${revealed.size>1?'s':''} — ${m.toFixed(2)}×`, 'win');
+    syncButton();
+  }
+  function cashOut(){
+    if(state !== 'playing' || revealed.size === 0) return;
+    const m = mult(revealed.size);
+    const w = Math.round(currentBet*m*100)/100;
+    setBalance(balance + w, true); Sound.cashout();
+    toast('minesMsg', `Saque em ${m.toFixed(2)}× — ganhou ${fmt(w)}!`, 'win');
+    mines.forEach(m=>{ if(!revealed.has(m)){ tiles[m].classList.add('mine','revealed','dim'); tiles[m].textContent = '💣'; } });
+    state = 'ended'; syncButton();
+  }
+  function action(){
+    Sound.init();
+    if(state === 'idle') start();
+    else if(state === 'playing') cashOut();
+    else { tiles.forEach(t=>{ t.className = 'mine-tile'; t.textContent = ''; }); revealed = new Set(); state = 'idle'; multDisplay.textContent = '1.00×'; toast('minesMsg','Aposte para começar.','info'); syncButton(); }
+  }
+  actionBtn.addEventListener('click', action);
+  refreshBetDisplay();
+  return { refreshBetDisplay, syncButton };
+})();
+
+/* ================ BAC BO ================ */
+const BacBo = (()=>{
+  const p1 = document.getElementById('bbPlayerDice').children, d1 = document.getElementById('bbDealerDice').children;
+  const psEl = document.getElementById('bbPlayerScore'), dsEl = document.getElementById('bbDealerScore');
+  const actionBtn = document.getElementById('bacboAction');
+  let pick = null, rolling = false;
+  document.querySelectorAll('#bacboBets .bb-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      if(rolling) return;
+      document.querySelectorAll('#bacboBets .bb-btn').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active'); pick = btn.dataset.pick;
+      Sound.bet(); syncButton();
+    });
+  });
+  function rand(){ return 1 + Math.floor(Math.random()*6); }
+  function syncButton(){
+    if(!actionBtn) return;
+    actionBtn.disabled = rolling || !pick || balance < bets.bacbo;
+    actionBtn.textContent = rolling ? 'Rolando...' : `Rolar ${fmt(bets.bacbo)}`;
+  }
+  function roll(){
+    if(rolling || !pick) return;
+    const bet = bets.bacbo; if(balance < bet){ toast('bacboMsg','Saldo insuficiente.','lose'); return; }
+    rolling = true; setBalance(balance - bet, false); Sound.dice();
+    toast('bacboMsg','Rolando os dados...','info'); syncButton();
+    [...p1, ...d1].forEach(el=>el.classList.add('rolling'));
+    let ticks = 0;
+    const iv = setInterval(()=>{
+      p1[0].textContent = rand(); p1[1].textContent = rand();
+      d1[0].textContent = rand(); d1[1].textContent = rand();
+      Sound.tick(); ticks++;
+      if(ticks >= 12){
+        clearInterval(iv);
+        const pv1 = rand(), pv2 = rand(), dv1 = rand(), dv2 = rand();
+        p1[0].textContent = pv1; p1[1].textContent = pv2;
+        d1[0].textContent = dv1; d1[1].textContent = dv2;
+        [...p1, ...d1].forEach(el=>el.classList.remove('rolling'));
+        const ps = pv1+pv2, ds = dv1+dv2;
+        psEl.textContent = ps; dsEl.textContent = ds;
+        settle(ps, ds, bet);
+      }
+    }, 70);
+  }
+  function settle(ps, ds, bet){
+    let outcome;
+    if(ps === ds) outcome = 'tie';
+    else if(ps > ds) outcome = 'player';
+    else outcome = 'dealer';
+    const labels = { player:'Você', dealer:'Banca', tie:'Empate' };
+    if(outcome === pick){
+      const mult = outcome === 'tie' ? 8 : 2;
+      const w = Math.round(bet*mult*100)/100;
+      setBalance(balance + w, true); Sound.win(mult>=8?3:2);
+      toast('bacboMsg', `${labels[outcome]} venceu ${ps} vs ${ds}! Ganhou ${fmt(w)} (${mult}×).`, 'win');
+    } else {
+      Sound.lose();
+      toast('bacboMsg', `${labels[outcome]} venceu ${ps} vs ${ds}. Perdeu ${fmt(bet)}.`, 'lose');
+    }
+    rolling = false; syncButton();
+  }
+  actionBtn.addEventListener('click', roll);
+  syncButton();
+  return { syncButton };
+})();
+
+/* ================ DOUBLE ================ */
+const Double = (()=>{
+  const SVG_NS = 'http://www.w3.org/2000/svg';
+  const SEGS = 15;
+  const segments = document.getElementById('doubleSegs');
+  const svg = document.getElementById('doubleSvg');
+  const result = document.getElementById('doubleResult');
+  let pick = null, spinning = false;
+  const cx = 100, cy = 100, r = 95;
+  function colorOf(n){ if(n === 0) return 'white'; return n <= 7 ? 'red' : 'black'; }
+  function colorHex(c){ return c === 'white' ? '#f5f5f5' : c === 'red' ? '#e63946' : '#2a2a40'; }
+  function polar(a, rad){ return [cx + rad*Math.cos(a), cy + rad*Math.sin(a)]; }
+  for(let i=0;i<SEGS;i++){
+    const a1 = (i/SEGS)*2*Math.PI - Math.PI/2;
+    const a2 = ((i+1)/SEGS)*2*Math.PI - Math.PI/2;
+    const [x1,y1] = polar(a1, r);
+    const [x2,y2] = polar(a2, r);
+    const path = document.createElementNS(SVG_NS, 'path');
+    path.setAttribute('d', `M ${cx} ${cy} L ${x1} ${y1} A ${r} ${r} 0 0 1 ${x2} ${y2} Z`);
+    path.setAttribute('fill', colorHex(colorOf(i)));
+    path.setAttribute('stroke', '#0a0a14');
+    path.setAttribute('stroke-width', '1.5');
+    segments.appendChild(path);
+    const mid = (a1 + a2) / 2;
+    const [tx,ty] = polar(mid, r*0.72);
+    const text = document.createElementNS(SVG_NS, 'text');
+    text.setAttribute('x', tx); text.setAttribute('y', ty);
+    text.setAttribute('text-anchor', 'middle'); text.setAttribute('dominant-baseline', 'middle');
+    text.setAttribute('font-size', '11'); text.setAttribute('font-weight', '800');
+    text.setAttribute('fill', colorOf(i) === 'white' ? '#0a0a12' : '#fff');
+    text.textContent = i;
+    segments.appendChild(text);
+  }
+  document.querySelectorAll('#doubleBets .db-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      if(spinning) return;
+      document.querySelectorAll('#doubleBets .db-btn').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active'); pick = btn.dataset.color;
+      Sound.bet(); syncButtons();
+    });
+  });
+  function spin(){
+    if(spinning || !pick) return;
+    const bet = bets.double; if(balance < bet){ toast('doubleMsg','Saldo insuficiente.','lose'); return; }
+    spinning = true; syncButtons(); setBalance(balance - bet, false);
+    toast('doubleMsg','Girando...','info'); Sound.spinStart();
+    const n = Math.floor(Math.random()*SEGS);
+    const targetAngle = (n + 0.5) * (360/SEGS);
+    const totalRot = 360*3 + (360 - targetAngle);
+    svg.style.transition = 'none';
+    svg.style.transform = 'rotate(0deg)';
+    void svg.offsetWidth;
+    svg.style.transition = 'transform 3s cubic-bezier(.15,.9,.25,1)';
+    svg.style.transform = `rotate(${totalRot}deg)`;
+    let tickCount = 0;
+    const tickInt = setInterval(()=>{ Sound.tick(); tickCount++; if(tickCount > 30) clearInterval(tickInt); }, 90);
+    setTimeout(()=>{
+      clearInterval(tickInt);
+      result.textContent = n;
+      result.style.color = colorOf(n) === 'white' ? '#fff' : (colorOf(n) === 'red' ? '#ff6b7a' : '#b0b0d0');
+      result.style.borderColor = colorHex(colorOf(n));
+      const won = pick === colorOf(n);
+      if(won){
+        const mult = pick === 'white' ? 14 : 2;
+        const w = Math.round(bet*mult*100)/100;
+        setBalance(balance + w, true); Sound.win(mult>=14?3:2);
+        toast('doubleMsg', `${n} (${colorOf(n) === 'white' ? 'branco' : colorOf(n) === 'red' ? 'vermelho' : 'preto'})! Ganhou ${fmt(w)} (${mult}×).`, 'win');
+      } else { Sound.lose(); toast('doubleMsg', `${n} ${colorOf(n) === 'white' ? '⚪' : colorOf(n) === 'red' ? '🔴' : '⚫'} — perdeu.`, 'lose'); }
+      spinning = false; syncButtons();
+    }, 3100);
+  }
+  document.getElementById('doubleAction').addEventListener('click', spin);
+  return { get spinning(){ return spinning; } };
+})();
+
+/* ================ BINGO ================ */
+const Bingo = (()=>{
+  const cardEl = document.getElementById('bingoCard');
+  const drawEl = document.getElementById('bingoDraw');
+  const actionBtn = document.getElementById('bingoAction');
+  let state = 'idle';
+  let card = [], marked = new Set(), currentBet = 0;
+  let ballsDrawn = 0, intervalId = null, lineCompleted = false;
+  function buildCard(){
+    const cols = [];
+    for(let c=0;c<5;c++){
+      const start = c*15 + 1, pool = [];
+      for(let i=start;i<start+15;i++) pool.push(i);
+      for(let i=pool.length-1;i>0;i--){ const j = Math.floor(Math.random()*(i+1)); [pool[i],pool[j]]=[pool[j],pool[i]]; }
+      cols.push(pool.slice(0,5));
+    }
+    card = [];
+    for(let r=0;r<5;r++) for(let c=0;c<5;c++) card.push({ n: cols[c][r], r, c });
+    card[12].free = true;
+  }
+  function renderCard(){
+    cardEl.innerHTML = card.map((cell,i)=>{
+      const isMarked = cell.free || marked.has(cell.n);
+      const cls = ['bingo-cell'];
+      if(isMarked) cls.push('marked');
+      if(lineCompleted && cell.winning) cls.push('line');
+      return `<div class="${cls.join(' ')}" data-i="${i}">${cell.free ? '★' : cell.n}</div>`;
+    }).join('');
+  }
+  function checkLine(){
+    const grid = Array.from({length:5}, ()=>[false,false,false,false,false]);
+    card.forEach(c=>{ if(c.free || marked.has(c.n)) grid[c.r][c.c] = true; });
+    const lines = [];
+    for(let r=0;r<5;r++) lines.push({ cells: grid[r].map((_,c)=>({r,c})), ok: grid[r].every(Boolean) });
+    for(let c=0;c<5;c++){ const col = [0,1,2,3,4].map(r=>grid[r][c]); lines.push({ cells: col.map((_,r)=>({r,c})), ok: col.every(Boolean) }); }
+    const d1 = [0,1,2,3,4].map(i=>grid[i][i]);
+    lines.push({ cells: [0,1,2,3,4].map(i=>({r:i,c:i})), ok: d1.every(Boolean) });
+    const d2 = [0,1,2,3,4].map(i=>grid[i][4-i]);
+    lines.push({ cells: [0,1,2,3,4].map(i=>({r:i,c:4-i})), ok: d2.every(Boolean) });
+    const winner = lines.find(l => l.ok);
+    if(winner){
+      lineCompleted = true;
+      card.forEach(cell=>{ cell.winning = winner.cells.some(w => w.r === cell.r && w.c === cell.c); });
+      return true;
+    }
+    return false;
+  }
+  function syncButton(){
+    if(!actionBtn) return;
+    if(state === 'idle'){ actionBtn.textContent = `Comprar cartela ${fmt(bets.bingo)}`; actionBtn.disabled = balance < bets.bingo; }
+    else if(state === 'playing'){ actionBtn.textContent = 'Sorteando...'; actionBtn.disabled = true; }
+    else { actionBtn.textContent = 'Nova cartela'; actionBtn.disabled = false; }
+  }
+  function start(){
+    if(state !== 'idle') return;
+    const bet = bets.bingo; if(balance < bet){ toast('bingoMsg','Saldo insuficiente.','lose'); return; }
+    setBalance(balance - bet, false); currentBet = bet;
+    buildCard(); marked = new Set(); ballsDrawn = 0; lineCompleted = false;
+    renderCard(); state = 'playing';
+    drawEl.textContent = 'Aguardando primeira bola...';
+    toast('bingoMsg','Sorteando bolas...','info');
+    Sound.bet(); syncButton();
+    const balls = [...Array(75).keys()].map(i=>i+1);
+    for(let i=balls.length-1;i>0;i--){ const j = Math.floor(Math.random()*(i+1)); [balls[i],balls[j]]=[balls[j],balls[i]]; }
+    intervalId = setInterval(()=>{
+      if(ballsDrawn >= balls.length){ stopPlay(false); return; }
+      const ball = balls[ballsDrawn]; ballsDrawn++;
+      drawEl.innerHTML = `Bola ${ballsDrawn}: <span class="bingo-ball">${ball}</span>`;
+      Sound.tick();
+      const cell = card.find(c=>c.n === ball);
+      if(cell && !cell.free){ marked.add(ball); renderCard(); Sound.gem(); }
+      if(checkLine()){ renderCard(); stopPlay(true); }
+    }, 420);
+  }
+  function stopPlay(won){
+    clearInterval(intervalId); intervalId = null;
+    if(won){
+      let mult;
+      if(ballsDrawn <= 15) mult = 8;
+      else if(ballsDrawn <= 25) mult = 4;
+      else if(ballsDrawn <= 35) mult = 2.5;
+      else if(ballsDrawn <= 45) mult = 1.6;
+      else mult = 1.2;
+      const w = Math.round(currentBet*mult*100)/100;
+      setBalance(balance + w, true); Sound.win(mult>=4?3:2);
+      toast('bingoMsg', `BINGO em ${ballsDrawn} bolas! Ganhou ${fmt(w)} (${mult}×).`, 'win');
+      drawEl.innerHTML += ` — 🎉 BINGO!`;
+    } else {
+      Sound.lose();
+      toast('bingoMsg','Nenhuma linha completa. Perdeu.','lose');
+    }
+    state = 'ended'; syncButton();
+  }
+  function action(){
+    Sound.init();
+    if(state === 'idle') start();
+    else if(state === 'ended'){
+      state = 'idle';
+      cardEl.innerHTML = ''; drawEl.textContent = 'Aguardando compra de cartela';
+      toast('bingoMsg','Compre uma cartela para jogar.','info'); syncButton();
+    }
+  }
+  actionBtn.addEventListener('click', action);
+  syncButton();
+  return { syncButton };
+})();
+
+/* ================ PÊNALTI ================ */
+const Penalty = (()=>{
+  const btn = document.getElementById('penaltyAction');
+  const btnControls = document.querySelectorAll('.pen-btn');
+  const keeperEl = document.getElementById('penKeeper');
+  let state = 'idle';
+  let currentBet = 0, goals = 0, shots = 0, keepers = [];
+  const MAX = 5;
+  function syncButton(){
+    if(!btn) return;
+    if(state === 'idle'){ btn.textContent = `Apostar ${fmt(bets.penalty)}`; btn.disabled = balance < bets.penalty; btnControls.forEach(b=>b.disabled = true); }
+    else if(state === 'playing'){ btn.textContent = `Gols: ${goals}/${shots} • Escolha o canto`; btn.disabled = true; btnControls.forEach(b=>b.disabled = false); }
+    else { btn.textContent = 'Nova aposta'; btn.disabled = false; btnControls.forEach(b=>b.disabled = true); }
+  }
+  function start(){
+    if(state !== 'idle') return;
+    const bet = bets.penalty; if(balance < bet){ toast('penMsg','Saldo insuficiente.','lose'); return; }
+    setBalance(balance - bet, false); currentBet = bet;
+    goals = 0; shots = 0;
+    keepers = Array.from({length: MAX}, ()=>['left','center','right'][Math.floor(Math.random()*3)]);
+    document.getElementById('penGoals').textContent = '0';
+    document.getElementById('penShots').textContent = '0';
+    document.getElementById('penBall').textContent = '⚽';
+    keeperEl.textContent = '🧍';
+    state = 'playing';
+    toast('penMsg','Chute! Escolha o canto.','info');
+    Sound.bet(); syncButton();
+  }
+  function shoot(zone){
+    if(state !== 'playing' || shots >= MAX) return;
+    const keeper = keepers[shots];
+    document.querySelectorAll('.pen-zone').forEach(z=>z.classList.remove('active'));
+    document.querySelector(`.pen-zone[data-zone="${zone}"]`).classList.add('active');
+    keeperEl.textContent = keeper === 'left' ? '🤾' : keeper === 'right' ? '🤾‍♂️' : '🧎';
+    Sound.whistle();
+    setTimeout(()=>{
+      const scored = zone !== keeper;
+      if(scored){ goals++; document.getElementById('penGoals').textContent = goals; document.getElementById('penBall').textContent = '⚽⚽'; Sound.win(2); }
+      else { document.getElementById('penBall').textContent = '🧤'; Sound.lose(); }
+      shots++; document.getElementById('penShots').textContent = shots;
+      const zl = zone === 'left' ? 'Esquerda' : zone === 'center' ? 'Meio' : 'Direita';
+      const kl = keeper === 'left' ? 'esquerda' : keeper === 'center' ? 'meio' : 'direita';
+      toast('penMsg', scored ? `⚽ GOL! ${zl}` : `🧤 Defendeu! (goleiro foi para ${kl})`, scored ? 'win' : 'lose');
+      setTimeout(()=>{
+        if(shots >= MAX) finish();
+        else { keeperEl.textContent = '🧍'; document.querySelectorAll('.pen-zone').forEach(z=>z.classList.remove('active')); syncButton(); }
+      }, 800);
+    }, 500);
+  }
+  function finish(){
+    let mult = 0;
+    if(goals === 5) mult = 10;
+    else if(goals === 4) mult = 4;
+    else if(goals === 3) mult = 1.8;
+    else if(goals === 2) mult = 1.0;
+    else mult = 0;
+    if(mult > 0){
+      const w = Math.round(currentBet*mult*100)/100;
+      setBalance(balance + w, true); Sound.win(mult>=4?3:2);
+      toast('penMsg', `Fim! ${goals} gols em 5. Ganhou ${fmt(w)} (${mult}×).`, 'win');
+    } else {
+      toast('penMsg', `Fim! ${goals} gols em 5. Perdeu ${fmt(currentBet)}.`, 'lose');
+    }
+    state = 'ended'; syncButton();
+  }
+  function action(){
+    Sound.init();
+    if(state === 'idle') start();
+    else if(state === 'ended'){ state = 'idle'; toast('penMsg','Escolha o canto para chutar.','info'); syncButton(); }
+  }
+  btn.addEventListener('click', action);
+  btnControls.forEach(b=>{
+    b.addEventListener('click', ()=>{ if(state === 'playing') shoot(b.dataset.zone); });
+  });
+  syncButton();
+  return { syncButton };
+})();
+
+/* ================ DADO ================ */
+const Dice = (()=>{
+  const visual = document.getElementById('diceVisual');
+  const marker = document.getElementById('diceMarker');
+  const fill = document.getElementById('diceFill');
+  const numEl = document.getElementById('diceNum');
+  const targetEl = document.getElementById('diceTarget');
+  const slider = document.getElementById('diceSlider');
+  const actionBtn = document.getElementById('diceAction');
+  let mode = 'under'; let spinning = false; let currentBet = 0;
+  let target = 50;
+  function updateSlider(){
+    target = parseInt(slider.value);
+    targetEl.textContent = target.toFixed(2);
+    marker.style.left = target + '%';
+    numEl.textContent = target.toFixed(2);
+    if(mode === 'under'){ fill.style.left = '0'; fill.style.right = (100 - target) + '%'; }
+    else { fill.style.left = target + '%'; fill.style.right = '0'; }
+  }
+  slider.addEventListener('input', updateSlider);
+  document.querySelectorAll('#diceMode .dm-btn').forEach(b=>{
+    b.addEventListener('click', ()=>{
+      if(spinning) return;
+      document.querySelectorAll('#diceMode .dm-btn').forEach(x=>x.classList.remove('active'));
+      b.classList.add('active'); mode = b.dataset.mode;
+      updateSlider(); Sound.bet();
+    });
+  });
+  function payout(mode, target){
+    const p = mode === 'under' ? target/100 : (100 - target)/100;
+    if(p <= 0.01) return 0;
+    return 0.97 / p;
+  }
+  function refresh(){ updateSlider(); }
+  function roll(){
+    if(spinning) return;
+    const bet = bets.dice; if(balance < bet){ toast('diceMsg','Saldo insuficiente.','lose'); return; }
+    spinning = true; syncButtons(); setBalance(balance - bet, false);
+    const result = Math.random()*100;
+    visual.classList.add('rolling'); Sound.dice();
+    toast('diceMsg','Rolando...','info');
+    let ticks = 0;
+    const iv = setInterval(()=>{
+      numEl.textContent = (Math.random()*100).toFixed(2);
+      marker.style.left = (Math.random()*100) + '%';
+      Sound.tick(); ticks++;
+      if(ticks >= 15){
+        clearInterval(iv); visual.classList.remove('rolling');
+        const r = Math.round(result*100)/100;
+        numEl.textContent = r.toFixed(2);
+        marker.style.left = r + '%';
+        const won = (mode === 'under' && r < target) || (mode === 'over' && r > target);
+        if(won){
+          const mult = payout(mode, target);
+          const w = Math.round(bet*mult*100)/100;
+          setBalance(balance + w, true); Sound.win(mult>=4?3:2);
+          toast('diceMsg', `${r.toFixed(2)} — ganhou ${fmt(w)} (${mult.toFixed(2)}×)!`, 'win');
+        } else {
+          Sound.lose();
+          toast('diceMsg', `${r.toFixed(2)} — perdeu ${fmt(bet)}.`, 'lose');
+        }
+        spinning = false; syncButtons();
+      }
+    }, 70);
+  }
+  actionBtn.addEventListener('click', roll);
+  updateSlider();
+  return { refresh, get spinning(){ return spinning; } };
+})();
+
+/* ================ INICIALIZAÇÃO ================ */
+initBetControls('slots','slots');
+initBetControls('av','aviator');
+initBetControls('tiger','tiger');
+initBetControls('rasp','rasp');
+initBetControls('roulette','roulette');
+initBetControls('bj','blackjack');
+initBetControls('bacbo','bacbo');
+initBetControls('double','double');
+initBetControls('mines','mines');
+initBetControls('bingo','bingo');
+initBetControls('penalty','penalty');
+initBetControls('dice','dice');
+
+setBalance(START_BALANCE, false);
+document.getElementById('avBetDisplay').textContent = fmt(bets.aviator);
+document.getElementById('minesBetDisplay').textContent = fmt(bets.mines);
+
+['click','touchstart','keydown'].forEach(ev=>window.addEventListener(ev, ()=>Sound.init(), { once:true, passive:true }));
+
+window.addEventListener('keydown', e=>{
+  if(e.target.tagName === 'INPUT') return;
+  const map = { '1':'slots','2':'aviator','3':'tiger','4':'rasp','5':'roulette','6':'blackjack','7':'bacbo','8':'double','9':'mines','b':'bingo','p':'penalty','d':'dice','0':'home' };
+  if(map[e.key]) showPage(map[e.key]);
+});
+</script>
+</body>
+</html>
