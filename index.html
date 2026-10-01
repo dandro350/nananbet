@@ -192,6 +192,13 @@ header{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:10px
 .dice-mode{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}
 .dm-btn{background:#141426;border:1px solid var(--line);color:var(--text);border-radius:10px;padding:10px 6px;font-weight:800;font-size:.85rem;cursor:pointer;transition:all .15s}
 .dm-btn.active{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#0a0a12;border-color:transparent}
+
+/* ============ SLOTS DE ANÚNCIO ============ */
+.ad-slot-top{display:block;position:relative;width:100%;margin:0 0 14px;overflow:hidden;background:transparent}
+.ad-slot-home{display:block;position:relative;width:100%;margin:14px 0 4px;overflow:hidden;background:transparent}
+.ad-slot-top iframe,.ad-slot-home iframe{display:block;border:0;max-width:none}
+
+/* ============ MODAIS ============ */
 .modal-overlay{position:fixed;inset:0;z-index:1000;background:rgba(4,4,10,.85);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:20px}
 .modal-overlay.active{display:flex;animation:fade .25s}
 .modal{background:linear-gradient(160deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:20px;padding:22px;max-width:400px;width:100%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.7)}
@@ -199,13 +206,30 @@ header{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:10px
 .modal p{margin:0 0 18px;color:var(--muted);font-size:.85rem;line-height:1.5}
 .modal .action-btn{margin-bottom:8px}
 .modal .back-btn{width:100%}
-.test-ad-overlay{position:fixed;inset:0;z-index:1001;background:rgba(0,0,0,.9);display:none;align-items:center;justify-content:center;padding:20px}
+
+.test-ad-overlay{position:fixed;inset:0;z-index:1001;background:rgba(0,0,0,.9);display:none;align-items:center;justify-content:center;padding:16px}
 .test-ad-overlay.active{display:flex}
-.test-ad-banner{background:linear-gradient(135deg,#ff6b35,#ffc542);border-radius:16px;padding:28px 24px;position:relative;max-width:400px;width:100%;text-align:center;color:#0a0a12;box-shadow:0 20px 60px rgba(255,159,28,.4)}
-.test-ad-banner h2{margin:0 0 8px;font-size:1.4rem;letter-spacing:1px}
-.test-ad-banner p{margin:0;font-size:.85rem;font-weight:600;line-height:1.5}
-.test-ad-close{position:absolute;top:8px;right:8px;width:34px;height:34px;border-radius:50%;background:rgba(0,0,0,.4);color:#fff;border:none;cursor:pointer;font-size:1.2rem;font-weight:800;line-height:1;display:flex;align-items:center;justify-content:center}
-.test-ad-close:hover{background:rgba(0,0,0,.7);transform:scale(1.1)}
+.test-ad-banner{background:linear-gradient(160deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:16px;position:relative;max-width:400px;width:100%;color:var(--text);box-shadow:0 20px 60px rgba(0,0,0,.6);max-height:92vh;display:flex;flex-direction:column;overflow:hidden}
+.test-ad-header{flex-shrink:0;padding:14px 52px 12px 16px;border-bottom:1px solid var(--line);position:relative;text-align:center}
+.test-ad-header h2{margin:0;font-size:1.05rem;color:var(--gold);letter-spacing:.5px}
+.test-ad-close{position:absolute;top:10px;right:10px;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.10);color:#fff;border:1px solid rgba(255,255,255,.2);cursor:pointer;font-size:1.1rem;font-weight:800;display:flex;align-items:center;justify-content:center;z-index:10;transition:all .15s}
+.test-ad-close:hover{background:rgba(255,77,94,.5);transform:scale(1.08);border-color:transparent}
+.test-ad-timer{position:absolute;top:12px;right:12px;font-size:.72rem;color:var(--gold);font-weight:800;background:rgba(255,197,66,.12);padding:6px 12px;border-radius:999px;border:1px solid rgba(255,197,66,.35);letter-spacing:.5px;font-variant-numeric:tabular-nums;min-width:34px;text-align:center}
+.test-ad-body{flex:1;overflow-y:auto;padding:12px 14px 14px;text-align:center;-webkit-overflow-scrolling:touch}
+.test-ad-body p{margin:0 0 10px;font-size:.8rem;color:var(--muted);font-weight:600;line-height:1.4}
+.rewarded-ad-box{background:#0a0a14;border:1px solid var(--line);border-radius:12px;width:100%;margin:0 0 12px;overflow:hidden;display:block;min-height:340px;max-height:340px}
+.rewarded-ad-box iframe{width:100%;height:340px;border:0;display:block;background:#0a0a14}
+
+/* ============ TIMED AD MODAL (300x250 a cada 5 min) ============ */
+.timed-ad-overlay{position:fixed;inset:0;z-index:999;background:rgba(4,4,10,.75);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;padding:20px}
+.timed-ad-overlay.active{display:flex;animation:fade .3s}
+.timed-ad-box{background:linear-gradient(160deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:16px;padding:12px;position:relative;box-shadow:0 20px 60px rgba(0,0,0,.7);display:flex;flex-direction:column;align-items:center}
+.timed-ad-close{position:absolute;top:-12px;right:-12px;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.25);cursor:pointer;font-size:1.1rem;font-weight:800;display:flex;align-items:center;justify-content:center;z-index:10;transition:all .15s;backdrop-filter:blur(8px)}
+.timed-ad-close:hover{background:rgba(255,77,94,.7);transform:scale(1.08);border-color:transparent}
+.timed-ad-label{font-size:.62rem;color:var(--muted);text-transform:uppercase;letter-spacing:1.4px;font-weight:700;margin-bottom:8px}
+.timed-ad-slot{width:300px;height:250px;max-width:100%;overflow:hidden;background:#0a0a14;border-radius:8px}
+.timed-ad-slot iframe{display:block;border:0;width:300px;height:250px}
+
 footer{margin-top:auto;padding-top:22px;border-top:1px solid var(--line);text-align:center}
 footer .foot-info{max-width:420px;margin:0 auto 16px;font-size:.72rem;color:#7a7a95;line-height:1.6}
 footer .advertise-btn{display:block;width:100%;max-width:280px;margin:0 auto 18px;font-weight:700}
@@ -236,6 +260,7 @@ footer .copyright{color:#5f5f7a;font-size:.7rem;letter-spacing:.5px}
       <div class="game-card" onclick="showPage('tiger')"><span class="tag">SLOTS</span><span class="ico">🐯</span><h3>Fortune Tiger</h3><p>3×3, 8 linhas.</p></div>
       <div class="game-card" onclick="showPage('rasp')"><span class="tag">RASP</span><span class="ico">🎫</span><h3>Raspadinha</h3><p>Raspe e encontre 3 iguais.</p></div>
     </div>
+    <div class="ad-slot-home" data-ad-key="bb0c968e1243a1e52f9f12654b7c344c" data-ad-w="728" data-ad-h="90"></div>
     <div class="section-title">Mesa & Cartas</div>
     <div class="games-grid">
       <div class="game-card" onclick="showPage('roulette')"><span class="tag">MESA</span><span class="ico">🎡</span><h3>Roleta</h3><p>Vermelho, preto, par/ímpar.</p></div>
@@ -243,6 +268,7 @@ footer .copyright{color:#5f5f7a;font-size:.7rem;letter-spacing:.5px}
       <div class="game-card" onclick="showPage('bacbo')"><span class="tag">DADOS</span><span class="ico">🎲</span><h3>Bac Bo</h3><p>Jogador x Banca.</p></div>
       <div class="game-card" onclick="showPage('double')"><span class="tag">RODA</span><span class="ico">🎯</span><h3>Double</h3><p>Vermelho, preto ou branco.</p></div>
     </div>
+    <div class="ad-slot-home" data-ad-key="4cacb3eec1f94432c9acfdd531016b09" data-ad-w="468" data-ad-h="60"></div>
     <div class="section-title">Casual & Sorte</div>
     <div class="games-grid">
       <div class="game-card" onclick="showPage('mines')"><span class="tag">MINAS</span><span class="ico">💣</span><h3>Mines</h3><p>Joias vs 3 bombas.</p></div>
@@ -258,6 +284,7 @@ footer .copyright{color:#5f5f7a;font-size:.7rem;letter-spacing:.5px}
 
   <section id="page-slots" class="page">
     <div class="topbar"><button class="back-btn" onclick="showPage('home')">← Voltar</button><h2>🎰 Frutas da Sorte</h2><button class="sound-toggle on">🔊</button></div>
+    <div class="ad-slot-top" data-ad-key="747a57b652706aa7ba92f6b5ed4bf549" data-ad-w="320" data-ad-h="50"></div>
     <div class="reels">
       <div class="reel" id="r0"><span class="sym">🍒</span></div>
       <div class="reel" id="r1"><span class="sym">🍒</span></div>
@@ -288,6 +315,7 @@ footer .copyright{color:#5f5f7a;font-size:.7rem;letter-spacing:.5px}
 
   <section id="page-aviator" class="page">
     <div class="topbar"><button class="back-btn" onclick="showPage('home')">← Voltar</button><h2>✈️ Aviãozinho</h2><button class="sound-toggle on">🔊</button></div>
+    <div class="ad-slot-top" data-ad-key="747a57b652706aa7ba92f6b5ed4bf549" data-ad-w="320" data-ad-h="50"></div>
     <div class="history-strip" id="historyStrip"></div>
     <div class="canvas-wrap">
       <canvas id="planeCanvas"></canvas>
@@ -311,6 +339,7 @@ footer .copyright{color:#5f5f7a;font-size:.7rem;letter-spacing:.5px}
 
   <section id="page-tiger" class="page">
     <div class="topbar"><button class="back-btn" onclick="showPage('home')">← Voltar</button><h2>🐯 Fortune Tiger</h2><button class="sound-toggle on">🔊</button></div>
+    <div class="ad-slot-top" data-ad-key="747a57b652706aa7ba92f6b5ed4bf549" data-ad-w="320" data-ad-h="50"></div>
     <div class="tiger-grid" id="tigerGrid">
       <div class="tiger-cell"><span class="sym">🍀</span></div><div class="tiger-cell"><span class="sym">🍀</span></div><div class="tiger-cell"><span class="sym">🍀</span></div>
       <div class="tiger-cell"><span class="sym">🍀</span></div><div class="tiger-cell"><span class="sym">🍀</span></div><div class="tiger-cell"><span class="sym">🍀</span></div>
@@ -341,6 +370,7 @@ footer .copyright{color:#5f5f7a;font-size:.7rem;letter-spacing:.5px}
 
   <section id="page-rasp" class="page">
     <div class="topbar"><button class="back-btn" onclick="showPage('home')">← Voltar</button><h2>🎫 Raspadinha</h2><button class="sound-toggle on">🔊</button></div>
+    <div class="ad-slot-top" data-ad-key="747a57b652706aa7ba92f6b5ed4bf549" data-ad-w="320" data-ad-h="50"></div>
     <div class="rasp-grid" id="raspGrid"></div>
     <div class="msg info" id="raspMsg">Aposte e clique em cada casa para raspar.</div>
     <div class="panel" style="margin-top:14px">
@@ -367,6 +397,7 @@ footer .copyright{color:#5f5f7a;font-size:.7rem;letter-spacing:.5px}
 
   <section id="page-roulette" class="page">
     <div class="topbar"><button class="back-btn" onclick="showPage('home')">← Voltar</button><h2>🎡 Roleta</h2><button class="sound-toggle on">🔊</button></div>
+    <div class="ad-slot-top" data-ad-key="747a57b652706aa7ba92f6b5ed4bf549" data-ad-w="320" data-ad-h="50"></div>
     <div class="roulette-display"><div class="roulette-number" id="rouletteNumber">–</div></div>
     <div class="msg info" id="rouletteMsg">Escolha um tipo de aposta.</div>
     <div class="panel" style="margin-top:14px">
@@ -393,6 +424,7 @@ footer .copyright{color:#5f5f7a;font-size:.7rem;letter-spacing:.5px}
 
   <section id="page-blackjack" class="page">
     <div class="topbar"><button class="back-btn" onclick="showPage('home')">← Voltar</button><h2>🃏 Blackjack 21</h2><button class="sound-toggle on">🔊</button></div>
+    <div class="ad-slot-top" data-ad-key="747a57b652706aa7ba92f6b5ed4bf549" data-ad-w="320" data-ad-h="50"></div>
     <div class="bj-table">
       <div class="bj-hand"><div class="bj-label">Banca <span class="bj-score" id="dealerScore"></span></div><div class="bj-cards" id="dealerCards"></div></div>
       <div class="bj-hand"><div class="bj-label">Você <span class="bj-score" id="playerScore"></span></div><div class="bj-cards" id="playerCards"></div></div>
@@ -418,6 +450,7 @@ footer .copyright{color:#5f5f7a;font-size:.7rem;letter-spacing:.5px}
 
   <section id="page-bacbo" class="page">
     <div class="topbar"><button class="back-btn" onclick="showPage('home')">← Voltar</button><h2>🎲 Bac Bo</h2><button class="sound-toggle on">🔊</button></div>
+    <div class="ad-slot-top" data-ad-key="747a57b652706aa7ba92f6b5ed4bf549" data-ad-w="320" data-ad-h="50"></div>
     <div class="bacbo-stage">
       <div class="bb-side"><h4>Você</h4><div class="bb-dice" id="bbPlayerDice"><div class="bb-die">–</div><div class="bb-die">–</div></div><div class="bb-score" id="bbPlayerScore">0</div></div>
       <div class="bb-vs">VS</div>
@@ -445,6 +478,7 @@ footer .copyright{color:#5f5f7a;font-size:.7rem;letter-spacing:.5px}
 
   <section id="page-double" class="page">
     <div class="topbar"><button class="back-btn" onclick="showPage('home')">← Voltar</button><h2>🎯 Double</h2><button class="sound-toggle on">🔊</button></div>
+    <div class="ad-slot-top" data-ad-key="747a57b652706aa7ba92f6b5ed4bf549" data-ad-w="320" data-ad-h="50"></div>
     <div class="double-stage">
       <div class="double-pointer">▼</div>
       <div class="double-wheel" id="doubleWheel">
@@ -476,6 +510,7 @@ footer .copyright{color:#5f5f7a;font-size:.7rem;letter-spacing:.5px}
 
   <section id="page-mines" class="page">
     <div class="topbar"><button class="back-btn" onclick="showPage('home')">← Voltar</button><h2>💣 Mines</h2><button class="sound-toggle on">🔊</button></div>
+    <div class="ad-slot-top" data-ad-key="747a57b652706aa7ba92f6b5ed4bf549" data-ad-w="320" data-ad-h="50"></div>
     <div class="status-bar"><span class="k">Aposta</span><span class="v" id="minesBetDisplay">R$ 0,50</span><span class="k">Mult.</span><span class="v" id="minesMultDisplay">1.00×</span></div>
     <div class="mines-grid" id="minesGrid"></div>
     <div class="msg info" id="minesMsg">Clique em apostar. 3 minas em 25 casas.</div>
@@ -495,6 +530,7 @@ footer .copyright{color:#5f5f7a;font-size:.7rem;letter-spacing:.5px}
 
   <section id="page-bingo" class="page">
     <div class="topbar"><button class="back-btn" onclick="showPage('home')">← Voltar</button><h2>🎱 Bingo</h2><button class="sound-toggle on">🔊</button></div>
+    <div class="ad-slot-top" data-ad-key="747a57b652706aa7ba92f6b5ed4bf549" data-ad-w="320" data-ad-h="50"></div>
     <div class="bingo-draw" id="bingoDraw">Aguardando compra de cartela</div>
     <div class="bingo-card" id="bingoCard"></div>
     <div class="msg info" id="bingoMsg">Complete uma linha para ganhar.</div>
@@ -514,6 +550,7 @@ footer .copyright{color:#5f5f7a;font-size:.7rem;letter-spacing:.5px}
 
   <section id="page-penalty" class="page">
     <div class="topbar"><button class="back-btn" onclick="showPage('home')">← Voltar</button><h2>⚽ Pênalti</h2><button class="sound-toggle on">🔊</button></div>
+    <div class="ad-slot-top" data-ad-key="747a57b652706aa7ba92f6b5ed4bf549" data-ad-w="320" data-ad-h="50"></div>
     <div class="pen-stage">
       <div class="pen-keeper" id="penKeeper">🧍</div>
       <div class="pen-goal" id="penGoal">
@@ -556,6 +593,7 @@ footer .copyright{color:#5f5f7a;font-size:.7rem;letter-spacing:.5px}
 
   <section id="page-dice" class="page">
     <div class="topbar"><button class="back-btn" onclick="showPage('home')">← Voltar</button><h2>🎲 Dado</h2><button class="sound-toggle on">🔊</button></div>
+    <div class="ad-slot-top" data-ad-key="747a57b652706aa7ba92f6b5ed4bf549" data-ad-w="320" data-ad-h="50"></div>
     <div class="dice-stage">
       <div class="dice-visual" id="diceVisual">🎲</div>
       <div class="dice-range">
@@ -606,16 +644,208 @@ footer .copyright{color:#5f5f7a;font-size:.7rem;letter-spacing:.5px}
 </div>
 <div class="test-ad-overlay" id="testAdOverlay">
   <div class="test-ad-banner">
-    <button class="test-ad-close" onclick="rewardFromAd()">✕</button>
-    <h2>📢 ANÚNCIO</h2>
-    <p>Clique no <strong>✕</strong> para fechar e receber <strong>R$ 7,77</strong> em créditos.</p>
+    <div class="test-ad-header">
+      <h2>📢 ANÚNCIO</h2>
+      <div class="test-ad-timer" id="testAdTimer">10s</div>
+      <button class="test-ad-close" id="testAdClose" onclick="rewardFromAd()" aria-label="Fechar" style="display:none">✕</button>
+    </div>
+    <div class="test-ad-body">
+      <p>Assista ao anúncio para receber <strong style="color:var(--gold)">R$ 7,77</strong> em créditos.</p>
+      <div class="rewarded-ad-box" id="rewardedAdContainer"></div>
+      <button class="action-btn" id="testAdReceiveBtn" onclick="rewardFromAd()" style="display:none">Fechar e receber</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ TIMED AD 300x250 (aparece a cada 5 min) ============ -->
+<div class="timed-ad-overlay" id="timedAdOverlay">
+  <div class="timed-ad-box">
+    <button class="timed-ad-close" onclick="closeTimedAd()" aria-label="Fechar">✕</button>
+    <div class="timed-ad-label">📢 Publicidade</div>
+    <div class="timed-ad-slot" id="timedAdSlot"></div>
   </div>
 </div>
 
 <script>
+/* ============= PERSISTÊNCIA (localStorage + cookie 10 anos) ============= */
+const Store = (()=>{
+  const PREFIX = 'nananbet_';
+  const TEN_YEARS_SECONDS = 315360000;
+
+  function setCookie(name, value){
+    try {
+      const expires = new Date(Date.now() + TEN_YEARS_SECONDS * 1000).toUTCString();
+      document.cookie = PREFIX + name + '=' + encodeURIComponent(value) +
+        '; expires=' + expires + '; path=/; SameSite=Lax';
+    } catch(e){}
+  }
+  function getCookie(name){
+    try {
+      const match = document.cookie.match(new RegExp('(^|;\\s*)' + PREFIX + name + '=([^;]*)'));
+      return match ? decodeURIComponent(match[2]) : null;
+    } catch(e){ return null; }
+  }
+
+  function set(key, value){
+    const json = JSON.stringify(value);
+    try { localStorage.setItem(PREFIX + key, json); } catch(e){}
+    setCookie(key, json);
+  }
+  function get(key, fallback){
+    try {
+      const ls = localStorage.getItem(PREFIX + key);
+      if(ls !== null) return JSON.parse(ls);
+    } catch(e){}
+    const ck = getCookie(key);
+    if(ck !== null){
+      try { return JSON.parse(ck); } catch(e){}
+    }
+    return fallback;
+  }
+
+  return { set, get };
+})();
+
+/* ============= TIMED AD 300x250 — a cada 5 minutos ============= */
+(function(){
+  const AD_KEY = 'dc3bd83a3375e668149a2bde7a714570';
+  const AD_W = 300;
+  const AD_H = 250;
+  const INTERVAL_MS = 5 * 60 * 1000;
+  let adInjected = false;
+
+  function injectAd(){
+    const slot = document.getElementById('timedAdSlot');
+    if(!slot || slot.dataset.adLoaded) return;
+    slot.dataset.adLoaded = '1';
+
+    const iframe = document.createElement('iframe');
+    iframe.setAttribute('scrolling', 'no');
+    iframe.setAttribute('frameborder', '0');
+    iframe.style.width = AD_W + 'px';
+    iframe.style.height = AD_H + 'px';
+    iframe.style.border = '0';
+    iframe.style.display = 'block';
+    iframe.style.background = '#0a0a14';
+    slot.appendChild(iframe);
+
+    const adOptions = JSON.stringify({ key: AD_KEY, format: 'iframe', height: AD_H, width: AD_W, params: {} });
+    const html =
+      '<!DOCTYPE html><html><head><meta charset="utf-8">' +
+      '<style>html,body{margin:0;padding:0;overflow:hidden;background:#0a0a14;}</style>' +
+      '</head><body>' +
+      '<scr' + 'ipt type="text/javascript">atOptions = ' + adOptions + ';</scr' + 'ipt>' +
+      '<scr' + 'ipt type="text/javascript" src="https://www.highrevenueformat.com/' + AD_KEY + '/invoke.js"></scr' + 'ipt>' +
+      '</body></html>';
+
+    if('srcdoc' in iframe){ iframe.srcdoc = html; }
+    else { const doc = iframe.contentWindow.document; doc.open(); doc.write(html); doc.close(); }
+    adInjected = true;
+  }
+
+  window.showTimedAd = function(){
+    const overlay = document.getElementById('timedAdOverlay');
+    if(!overlay) return;
+    if(!adInjected) injectAd();
+    overlay.classList.add('active');
+  };
+
+  window.closeTimedAd = function(){
+    const overlay = document.getElementById('timedAdOverlay');
+    if(overlay) overlay.classList.remove('active');
+    // Reset para próxima abertura carregar anúncio novo
+    const slot = document.getElementById('timedAdSlot');
+    if(slot){
+      slot.innerHTML = '';
+      delete slot.dataset.adLoaded;
+      adInjected = false;
+    }
+  };
+
+  setTimeout(function(){
+    showTimedAd();
+    setInterval(showTimedAd, INTERVAL_MS);
+  }, INTERVAL_MS);
+})();
+
+/* ============= BANNERS highrevenueformat — iframe isolado por slot ============= */
+(function(){
+  function injectAd(container){
+    if(!container || container.dataset.adLoaded) return;
+    const key = container.dataset.adKey;
+    if(!key) return;
+    container.dataset.adLoaded = '1';
+
+    const w = parseInt(container.dataset.adW || '320', 10);
+    const h = parseInt(container.dataset.adH || '50', 10);
+
+    container.innerHTML = '';
+    container.style.position = 'relative';
+    container.style.display = 'block';
+    container.style.overflow = 'hidden';
+    container.style.width = '100%';
+
+    const available = container.clientWidth || 320;
+    const scale = Math.min(1, available / w);
+    const finalH = Math.max(1, Math.round(h * scale));
+
+    container.style.height = finalH + 'px';
+
+    const iframe = document.createElement('iframe');
+    iframe.setAttribute('scrolling', 'no');
+    iframe.setAttribute('frameborder', '0');
+    iframe.style.position = 'absolute';
+    iframe.style.top = '0';
+    iframe.style.width = w + 'px';
+    iframe.style.height = h + 'px';
+    iframe.style.border = '0';
+    iframe.style.display = 'block';
+    iframe.style.background = 'transparent';
+    iframe.style.transformOrigin = 'top left';
+
+    if(scale < 1){
+      iframe.style.left = '0';
+      iframe.style.transform = 'scale(' + scale + ')';
+    } else {
+      iframe.style.left = '50%';
+      iframe.style.transform = 'translateX(-50%)';
+    }
+
+    container.appendChild(iframe);
+
+    const adOptions = JSON.stringify({ key: key, format: 'iframe', height: h, width: w, params: {} });
+    const html =
+      '<!DOCTYPE html><html><head><meta charset="utf-8">' +
+      '<style>html,body{margin:0;padding:0;overflow:hidden;background:transparent;}</style>' +
+      '</head><body>' +
+      '<scr' + 'ipt type="text/javascript">atOptions = ' + adOptions + ';</scr' + 'ipt>' +
+      '<scr' + 'ipt type="text/javascript" src="https://www.highrevenueformat.com/' + key + '/invoke.js"></scr' + 'ipt>' +
+      '</body></html>';
+
+    if('srcdoc' in iframe){ iframe.srcdoc = html; }
+    else { const doc = iframe.contentWindow.document; doc.open(); doc.write(html); doc.close(); }
+  }
+
+  window.injectPageAds = function(pageId){
+    const page = document.getElementById('page-' + pageId);
+    if(!page) return;
+    const slots = page.querySelectorAll('[data-ad-key]');
+    slots.forEach((slot, i) => {
+      setTimeout(() => injectAd(slot), i * 150);
+    });
+  };
+
+  function boot(){ window.injectPageAds('home'); }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', boot);
+  } else {
+    boot();
+  }
+})();
+
 /* ============= ESTADO ============= */
 const START_BALANCE = 7.77;
-let balance = START_BALANCE;
+let balance = Store.get('balance', START_BALANCE);
 let adShownThisZero = false, adActive = false;
 const balanceEl = document.getElementById('balanceEl');
 function fmt(v){ return 'R$ ' + v.toFixed(2).replace('.', ','); }
@@ -623,6 +853,7 @@ function setBalance(v, animate){
   const wasZero = balance < 0.10;
   balance = Math.max(0, Math.round(v*100)/100);
   balanceEl.textContent = fmt(balance);
+  Store.set('balance', balance);
   if(animate){ balanceEl.classList.add('bump'); setTimeout(()=>balanceEl.classList.remove('bump'), 180); }
   syncButtons();
   const isZero = balance < 0.10;
@@ -631,14 +862,94 @@ function setBalance(v, animate){
 }
 function showAdModal(){ adActive = true; document.getElementById('adModal').classList.add('active'); }
 function closeAdModal(){ adActive = false; document.getElementById('adModal').classList.remove('active'); }
-function showTestAd(){ document.getElementById('adModal').classList.remove('active'); document.getElementById('testAdOverlay').classList.add('active'); }
+
+/* ============= NATIVE BANNER (dentro de iframe) ============= */
+function loadNativeBanner(){
+  const container = document.getElementById('rewardedAdContainer');
+  if(!container) return;
+  // Se já tem iframe carregado, remove antes (garante anúncio fresco)
+  container.innerHTML = '';
+
+  const iframe = document.createElement('iframe');
+  iframe.setAttribute('scrolling', 'auto');
+  iframe.setAttribute('frameborder', '0');
+  container.appendChild(iframe);
+
+  const html =
+    '<!DOCTYPE html><html><head><meta charset="utf-8">' +
+    '<meta name="viewport" content="width=device-width,initial-scale=1">' +
+    '<style>' +
+    'html,body{margin:0;padding:0;background:#0a0a14;color:#fff;font-family:system-ui,-apple-system,sans-serif;overflow-x:hidden;}' +
+    '#container-c506a168765bcc612bbbc67211974820{padding:6px;max-height:328px;overflow-y:auto;-webkit-overflow-scrolling:touch;}' +
+    '#container-c506a168765bcc612bbbc67211974820 > *{margin:0 0 8px;display:block;max-width:100%;}' +
+    '#container-c506a168765bcc612bbbc67211974820 > *:last-child{margin-bottom:0;}' +
+    'img,iframe{max-width:100%;}' +
+    '</style></head><body>' +
+    '<script async="async" data-cfasync="false" src="https://pl31595967.profitableratecpmnetwork.com/c506a168765bcc612bbbc67211974820/invoke.js"><\/script>' +
+    '<div id="container-c506a168765bcc612bbbc67211974820"></div>' +
+    '</body></html>';
+
+  const doc = iframe.contentWindow.document;
+  doc.open(); doc.write(html); doc.close();
+}
+
+/* ============= COUNTDOWN 10s + ABERTURA DO MODAL ============= */
+let testAdCountdownTimer = null;
+
+function startTestAdCountdown(){
+  const closeBtn = document.getElementById('testAdClose');
+  const timerEl = document.getElementById('testAdTimer');
+  const receiveBtn = document.getElementById('testAdReceiveBtn');
+
+  closeBtn.style.display = 'none';
+  receiveBtn.style.display = 'none';
+  timerEl.style.display = 'inline-block';
+
+  let remaining = 10;
+  timerEl.textContent = remaining + 's';
+
+  clearInterval(testAdCountdownTimer);
+  testAdCountdownTimer = setInterval(() => {
+    remaining--;
+    if(remaining <= 0){
+      clearInterval(testAdCountdownTimer);
+      testAdCountdownTimer = null;
+      timerEl.style.display = 'none';
+      closeBtn.style.display = 'flex';
+      receiveBtn.style.display = 'block';
+    } else {
+      timerEl.textContent = remaining + 's';
+    }
+  }, 1000);
+}
+
+function showTestAd(){
+  document.getElementById('adModal').classList.remove('active');
+  document.getElementById('testAdOverlay').classList.add('active');
+  loadNativeBanner();
+  startTestAdCountdown();
+}
+
 function rewardFromAd(){
+  // Só permite fechar depois que o contador zerou
+  const closeBtn = document.getElementById('testAdClose');
+  if(closeBtn.style.display === 'none') return;
+
+  clearInterval(testAdCountdownTimer);
+  testAdCountdownTimer = null;
+
+  // Reseta o container do anúncio — próximo "assistir" carrega ads novos (novo CPM)
+  const adBox = document.getElementById('rewardedAdContainer');
+  if(adBox){ adBox.innerHTML = ''; }
+
   document.getElementById('testAdOverlay').classList.remove('active');
   adActive = false; adShownThisZero = false;
   setBalance(balance + 7.77, true);
+
   ['slotsMsg','avMsg','tigerMsg','raspMsg','rouletteMsg','bjMsg','bacboMsg','doubleMsg','minesMsg','bingoMsg','penMsg','diceMsg']
     .forEach(id=>toast(id,'Anúncio concluído! +R$ 7,77 em créditos.','win'));
 }
+
 function advertiseHere(){
   const subject = encodeURIComponent('Anuncie na NananBet');
   const body = encodeURIComponent(
@@ -659,6 +970,8 @@ function showPage(id){
   Sound.init();
   window.scrollTo({top:0,behavior:'smooth'});
   if(id === 'aviator') Aviator.enter(); else Aviator.leave();
+  if(window.injectPageAds) window.injectPageAds(id);
+  Store.set('lastPage', id);
   if(balance < 0.10 && !adActive && !adShownThisZero){
     adShownThisZero = true;
     setTimeout(()=>{ if(balance<0.10 && !adActive) showAdModal(); }, 700);
@@ -666,7 +979,7 @@ function showPage(id){
 }
 /* ============= SOM ============= */
 const Sound = (()=>{
-  let ctx = null, enabled = true;
+  let ctx = null, enabled = Store.get('sound', true);
   function init(){
     if(ctx){ if(ctx.state==='suspended') ctx.resume(); return; }
     try{ ctx = new (window.AudioContext||window.webkitAudioContext)(); }catch(e){ ctx=null; }
@@ -698,7 +1011,7 @@ const Sound = (()=>{
   }
   return {
     init,
-    setEnabled(v){ enabled = v; if(v) init(); },
+    setEnabled(v){ enabled = v; Store.set('sound', v); if(v) init(); },
     isEnabled(){ return enabled; },
     tick(){ tone(600+Math.random()*400, 0.025, 'square', 0.018); },
     reelStop(){ tone(520, 0.10, 'triangle', 0.10, 180); noise(0.06, 0.05); },
@@ -728,14 +1041,23 @@ function toast(elId, text, cls){
   if(cls === 'win' || cls === 'lose'){ el.classList.add('pop'); setTimeout(()=>el.classList.remove('pop'), 360); }
 }
 /* ============= APOSTAS ============= */
-const bets = { slots:0.50, aviator:0.50, tiger:0.50, rasp:0.50, roulette:0.50, blackjack:0.50, bacbo:0.50, double:0.50, mines:0.50, bingo:0.50, penalty:0.50, dice:0.50 };
+const DEFAULT_BETS = { slots:0.50, aviator:0.50, tiger:0.50, rasp:0.50, roulette:0.50, blackjack:0.50, bacbo:0.50, double:0.50, mines:0.50, bingo:0.50, penalty:0.50, dice:0.50 };
+const bets = Object.assign({}, DEFAULT_BETS, Store.get('bets', {}));
+function persistBets(){ Store.set('bets', bets); }
+
 function initBetControls(prefix, key){
   const row = document.getElementById(prefix + 'Bets'); if(!row) return;
+  // Restaura botão ativo com base no valor salvo
+  const saved = bets[key];
+  row.querySelectorAll('.bet-btn').forEach(b=>{
+    b.classList.toggle('active', parseFloat(b.dataset.bet) === saved);
+  });
   row.querySelectorAll('.bet-btn').forEach(btn=>{
     btn.addEventListener('click', ()=>{
       row.querySelectorAll('.bet-btn').forEach(b=>b.classList.remove('active'));
       btn.classList.add('active');
       bets[key] = parseFloat(btn.dataset.bet);
+      persistBets();
       const ci = document.getElementById((prefix==='bj'?'bj':prefix) + 'Custom');
       if(ci) ci.value = '';
       onBetChange(key); Sound.bet();
@@ -750,6 +1072,7 @@ function applyCustomBet(key){
   if(!isFinite(v) || v < 0.10){ toast(msgMap[key], 'Valor mínimo: R$ 0,10', 'lose'); return; }
   if(v > 100){ toast(msgMap[key], 'Valor máximo: R$ 100,00', 'lose'); return; }
   bets[key] = Math.round(v*100)/100;
+  persistBets();
   const row = document.getElementById(key === 'blackjack' ? 'bjBets' : key+'Bets');
   if(row) row.querySelectorAll('.bet-btn').forEach(b=>b.classList.remove('active'));
   onBetChange(key); Sound.bet();
@@ -774,9 +1097,11 @@ function syncButtons(){
     const bingoBtn = document.getElementById('bingoAction'); if(bingoBtn) Bingo.syncButton();
     const penBtn = document.getElementById('penaltyAction'); if(penBtn) Penalty.syncButton();
     const diceBtn = document.getElementById('diceAction'); if(diceBtn) diceBtn.disabled = Dice.spinning || balance < bets.dice;
-  } catch(e) { /* módulos ainda em inicialização */ }
+  } catch(e) { }
 }
 document.querySelectorAll('.sound-toggle').forEach(btn=>{
+  btn.classList.toggle('on', Sound.isEnabled());
+  btn.textContent = Sound.isEnabled() ? '🔊' : '🔇';
   btn.addEventListener('click', function(){
     const on = !Sound.isEnabled();
     Sound.setEnabled(on);
@@ -1695,7 +2020,7 @@ initBetControls('bingo','bingo');
 initBetControls('penalty','penalty');
 initBetControls('dice','dice');
 
-setBalance(START_BALANCE, false);
+setBalance(balance, false);
 document.getElementById('avBetDisplay').textContent = fmt(bets.aviator);
 document.getElementById('minesBetDisplay').textContent = fmt(bets.mines);
 
