@@ -260,7 +260,7 @@
           "name": "O NananBet é gratuito?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Sim. O NananBet é 100% gratuito. Você começa com R$ 7,77 em créditos virtuais e pode ganhar mais assistindo anúncios. Não é necessário depositar nada."
+            "text": "Sim. O NananBet é 100% gratuito. Você começa com $ 7.77 em créditos virtuais e pode ganhar mais assistindo anúncios. Não é necessário depositar nada."
           }
         },
         {
@@ -538,7 +538,7 @@ footer .footer-links a:hover{color:var(--gold)}
       <div class="logo" onclick="showPage('home')">NananBet<span data-i18n="logo.sub">jogue muito, não pague nada</span></div>
       <div class="balance-chip">
         <span class="lbl" data-i18n="balance">Saldo</span>
-        <span class="val" id="balanceEl">R$ 7,77</span>
+        <span class="val" id="balanceEl">$ 7.77</span>
         <button class="recharge-btn" id="rechargeBtn" onclick="openRewardModal()" aria-label="+" title="+">+</button>
       </div>
     </header>
@@ -589,13 +589,13 @@ footer .footer-links a:hover{color:var(--gold)}
     </div>
     <div class="section-title" data-i18n="sec.how">Como funciona</div>
     <div class="panel" style="font-size:.8rem;color:var(--muted);line-height:1.6" data-i18n-html="home.how">
-      Você começa com <strong style="color:var(--gold)">R$ 7,77</strong> em créditos virtuais. Saldo zerado libera a opção de ganhar mais assistindo um anúncio. Sem depósito, sem saque, sem conversão.
+      Você começa com <strong style="color:var(--gold)">$ 7.77</strong> em créditos virtuais. Saldo zerado libera a opção de ganhar mais assistindo um anúncio. Sem depósito, sem saque, sem conversão.
     </div>
     <!-- FAQ SEO (4 perguntas alinhadas ao JSON-LD) -->
     <div class="seo-content" id="faq-home">
       <h2 data-i18n="faq.title">Perguntas Frequentes</h2>
       <h3 data-i18n="faq.q1">O NananBet é gratuito?</h3>
-      <p data-i18n="faq.a1">Sim. O NananBet é 100% gratuito. Você começa com R$ 7,77 em créditos virtuais e pode ganhar mais assistindo anúncios. Não é necessário depositar nada.</p>
+      <p data-i18n="faq.a1">Sim. O NananBet é 100% gratuito. Você começa com $ 7.77 em créditos virtuais e pode ganhar mais assistindo anúncios. Não é necessário depositar nada.</p>
       <h3 data-i18n="faq.q2">Posso sacar os créditos?</h3>
       <p data-i18n="faq.a2">Não. Os créditos são virtuais e não podem ser convertidos em dinheiro real, sacados ou transferidos. É apenas entretenimento.</p>
       <h3 data-i18n="faq.q3">Preciso baixar algo?</h3>
@@ -616,11 +616,11 @@ footer .footer-links a:hover{color:var(--gold)}
     <div class="msg info" id="slotsMsg" data-i18n="slots.init">Escolha sua aposta e gire.</div>
     <div class="panel" style="margin-top:14px">
       <div class="bet-row" id="slotsBets">
-        <button class="bet-btn" data-bet="0.10">R$ 0,10</button>
-        <button class="bet-btn" data-bet="0.25">R$ 0,25</button>
-        <button class="bet-btn active" data-bet="0.50">R$ 0,50</button>
-        <button class="bet-btn" data-bet="1.00">R$ 1,00</button>
-        <button class="bet-btn" data-bet="2.00">R$ 2,00</button>
+        <button class="bet-btn" data-bet="0.10">$ 0.10</button>
+        <button class="bet-btn" data-bet="0.25">$ 0.25</button>
+        <button class="bet-btn active" data-bet="0.50">$ 0.50</button>
+        <button class="bet-btn" data-bet="1.00">$ 1.00</button>
+        <button class="bet-btn" data-bet="2.00">$ 2.00</button>
       </div>
       <div class="custom-row"><input type="number" id="slotsCustom" placeholder="Valor personalizado" min="0.10" step="0.10" data-i18n-ph="ph.custom"><button onclick="applyCustomBet('slots')" data-i18n="btn.apply">Aplicar</button></div>
       <button class="action-btn" id="spinBtn" data-i18n="btn.spin">Girar</button>
@@ -637,7 +637,7 @@ footer .footer-links a:hover{color:var(--gold)}
     <!-- ===== SEO EDITORIAL ===== -->
     <div class="seo-content">
       <h2 data-i18n="seo.slots.how">Como jogar Frutas da Sorte</h2>
-      <p data-i18n="seo.slots.p1">Frutas da Sorte é um slot clássico de 3 rolos com 6 símbolos. Escolha sua aposta (de R$ 0,10 a R$ 2,00), clique em "Girar" e torça para três símbolos iguais aparecerem nos três rolos. O prêmio é multiplicado pela sua aposta de acordo com a tabela acima.</p>
+      <p data-i18n="seo.slots.p1">Frutas da Sorte é um slot clássico de 3 rolos com 6 símbolos. Escolha sua aposta (de $ 0.10 a $ 2.00), clique em "Girar" e torça para três símbolos iguais aparecerem nos três rolos. O prêmio é multiplicado pela sua aposta de acordo com a tabela acima.</p>
       <h3 data-i18n="seo.slots.tips">Dicas estratégicas</h3>
       <ul>
         <li data-i18n="seo.slots.tip1">O símbolo ⭐ é o mais raro e paga 420× — mas a probabilidade é de apenas 0,02%.</li>
@@ -660,15 +660,15 @@ footer .footer-links a:hover{color:var(--gold)}
       <canvas id="planeCanvas"></canvas>
       <div class="canvas-overlay"><div class="mult-display" id="multDisplay">1.00×</div><div class="mult-sub" id="multSub" data-i18n="av.waiting">Aguardando</div></div>
     </div>
-    <div class="status-bar"><span class="k" data-i18n="lbl.bet">Aposta</span><span class="v" id="avBetDisplay">R$ 0,50</span><span class="k" data-i18n="lbl.return">Retorno</span><span class="v" id="avPotential">—</span></div>
+    <div class="status-bar"><span class="k" data-i18n="lbl.bet">Aposta</span><span class="v" id="avBetDisplay">$ 0.50</span><span class="k" data-i18n="lbl.return">Retorno</span><span class="v" id="avPotential">—</span></div>
     <div class="msg info" id="avMsg" data-i18n="av.init">Faça sua aposta antes da decolagem.</div>
     <div class="panel" style="margin-top:14px">
       <div class="bet-row" id="avBets">
-        <button class="bet-btn" data-bet="0.10">R$ 0,10</button>
-        <button class="bet-btn" data-bet="0.25">R$ 0,25</button>
-        <button class="bet-btn active" data-bet="0.50">R$ 0,50</button>
-        <button class="bet-btn" data-bet="1.00">R$ 1,00</button>
-        <button class="bet-btn" data-bet="2.00">R$ 2,00</button>
+        <button class="bet-btn" data-bet="0.10">$ 0.10</button>
+        <button class="bet-btn" data-bet="0.25">$ 0.25</button>
+        <button class="bet-btn active" data-bet="0.50">$ 0.50</button>
+        <button class="bet-btn" data-bet="1.00">$ 1.00</button>
+        <button class="bet-btn" data-bet="2.00">$ 2.00</button>
       </div>
       <div class="custom-row"><input type="number" id="avCustom" placeholder="Valor personalizado" min="0.10" step="0.10" data-i18n-ph="ph.custom"><button onclick="applyCustomBet('aviator')" data-i18n="btn.apply">Aplicar</button></div>
       <button class="action-btn" id="avAction" data-i18n="btn.bet">Apostar</button>
@@ -681,7 +681,7 @@ footer .footer-links a:hover{color:var(--gold)}
       <h3 data-i18n="seo.av.tips">Dicas estratégicas</h3>
       <ul>
         <li data-i18n="seo.av.tip1">Saque cedo (1.2× a 1.5×) para vitórias frequentes e pequenas, ou tarde (5×+) para prêmios maiores, porém raros.</li>
-        <li data-i18n="seo.av.tip2">O RTP é de 97% — a cada R$ 100 apostados, R$ 97 retornam em média.</li>
+        <li data-i18n="seo.av.tip2">O RTP é de 97% — a cada $ 100 apostados, $ 97 retornam em média.</li>
         <li data-i18n="seo.av.tip3">Não existe "estratégia infalível" — o resultado é aleatório a cada rodada.</li>
       </ul>
       <div class="internal-links">
@@ -703,11 +703,11 @@ footer .footer-links a:hover{color:var(--gold)}
     <div class="msg info" id="tigerMsg" data-i18n="tiger.init">8 linhas: 3 horizontais, 3 verticais, 2 diagonais.</div>
     <div class="panel" style="margin-top:14px">
       <div class="bet-row" id="tigerBets">
-        <button class="bet-btn" data-bet="0.10">R$ 0,10</button>
-        <button class="bet-btn" data-bet="0.25">R$ 0,25</button>
-        <button class="bet-btn active" data-bet="0.50">R$ 0,50</button>
-        <button class="bet-btn" data-bet="1.00">R$ 1,00</button>
-        <button class="bet-btn" data-bet="2.00">R$ 2,00</button>
+        <button class="bet-btn" data-bet="0.10">$ 0.10</button>
+        <button class="bet-btn" data-bet="0.25">$ 0.25</button>
+        <button class="bet-btn active" data-bet="0.50">$ 0.50</button>
+        <button class="bet-btn" data-bet="1.00">$ 1.00</button>
+        <button class="bet-btn" data-bet="2.00">$ 2.00</button>
       </div>
       <div class="custom-row"><input type="number" id="tigerCustom" placeholder="Valor personalizado" min="0.10" step="0.10" data-i18n-ph="ph.custom"><button onclick="applyCustomBet('tiger')" data-i18n="btn.apply">Aplicar</button></div>
       <button class="action-btn" id="tigerBtn" data-i18n="btn.spin">Girar</button>
@@ -746,11 +746,11 @@ footer .footer-links a:hover{color:var(--gold)}
     <div class="msg info" id="raspMsg" data-i18n="rasp.init">Aposte e clique em cada casa para raspar.</div>
     <div class="panel" style="margin-top:14px">
       <div class="bet-row" id="raspBets">
-        <button class="bet-btn" data-bet="0.10">R$ 0,10</button>
-        <button class="bet-btn" data-bet="0.25">R$ 0,25</button>
-        <button class="bet-btn active" data-bet="0.50">R$ 0,50</button>
-        <button class="bet-btn" data-bet="1.00">R$ 1,00</button>
-        <button class="bet-btn" data-bet="2.00">R$ 2,00</button>
+        <button class="bet-btn" data-bet="0.10">$ 0.10</button>
+        <button class="bet-btn" data-bet="0.25">$ 0.25</button>
+        <button class="bet-btn active" data-bet="0.50">$ 0.50</button>
+        <button class="bet-btn" data-bet="1.00">$ 1.00</button>
+        <button class="bet-btn" data-bet="2.00">$ 2.00</button>
       </div>
       <div class="custom-row"><input type="number" id="raspCustom" placeholder="Valor personalizado" min="0.10" step="0.10" data-i18n-ph="ph.custom"><button onclick="applyCustomBet('rasp')" data-i18n="btn.apply">Aplicar</button></div>
       <button class="action-btn" id="raspAction" data-i18n="rasp.buy">Comprar cartela</button>
@@ -799,11 +799,11 @@ footer .footer-links a:hover{color:var(--gold)}
         <button class="rb-btn" data-rb="high" data-i18n-html="rl.high">19–36<br><small>2×</small></button>
       </div>
       <div class="bet-row" id="rouletteBetsRow">
-        <button class="bet-btn" data-bet="0.10">R$ 0,10</button>
-        <button class="bet-btn" data-bet="0.25">R$ 0,25</button>
-        <button class="bet-btn active" data-bet="0.50">R$ 0,50</button>
-        <button class="bet-btn" data-bet="1.00">R$ 1,00</button>
-        <button class="bet-btn" data-bet="2.00">R$ 2,00</button>
+        <button class="bet-btn" data-bet="0.10">$ 0.10</button>
+        <button class="bet-btn" data-bet="0.25">$ 0.25</button>
+        <button class="bet-btn active" data-bet="0.50">$ 0.50</button>
+        <button class="bet-btn" data-bet="1.00">$ 1.00</button>
+        <button class="bet-btn" data-bet="2.00">$ 2.00</button>
       </div>
       <div class="custom-row"><input type="number" id="rouletteCustom" placeholder="Valor personalizado" min="0.10" step="0.10" data-i18n-ph="ph.custom"><button onclick="applyCustomBet('roulette')" data-i18n="btn.apply">Aplicar</button></div>
       <button class="action-btn" id="rouletteBtn" data-i18n="btn.spin">Girar</button>
@@ -837,11 +837,11 @@ footer .footer-links a:hover{color:var(--gold)}
     <div class="msg info" id="bjMsg" data-i18n="bj.init">Faça sua aposta e clique em Apostar.</div>
     <div class="panel" style="margin-top:14px">
       <div class="bet-row" id="bjBets">
-        <button class="bet-btn" data-bet="0.10">R$ 0,10</button>
-        <button class="bet-btn" data-bet="0.25">R$ 0,25</button>
-        <button class="bet-btn active" data-bet="0.50">R$ 0,50</button>
-        <button class="bet-btn" data-bet="1.00">R$ 1,00</button>
-        <button class="bet-btn" data-bet="2.00">R$ 2,00</button>
+        <button class="bet-btn" data-bet="0.10">$ 0.10</button>
+        <button class="bet-btn" data-bet="0.25">$ 0.25</button>
+        <button class="bet-btn active" data-bet="0.50">$ 0.50</button>
+        <button class="bet-btn" data-bet="1.00">$ 1.00</button>
+        <button class="bet-btn" data-bet="2.00">$ 2.00</button>
       </div>
       <div class="custom-row"><input type="number" id="bjCustom" placeholder="Valor personalizado" min="0.10" step="0.10" data-i18n-ph="ph.custom"><button onclick="applyCustomBet('blackjack')" data-i18n="btn.apply">Aplicar</button></div>
       <div style="display:flex;gap:8px">
@@ -870,7 +870,7 @@ footer .footer-links a:hover{color:var(--gold)}
   </section>
 
   <!-- ⬇️⬇️⬇️ CONTINUA NA PARTE 2/2 ⬇️⬇️⬇️ -->
-  <!-- ================== BAC BO ================== -->
+    <!-- ================== BAC BO ================== -->
   <section id="page-bacbo" class="page">
     <div class="topbar"><button class="back-btn" onclick="showPage('home')" data-i18n="back">← Voltar</button><h2 data-i18n="g.bacbo.title">🎲 Bac Bo</h2><button class="sound-toggle on">🔊</button></div>
     <div class="bacbo-stage">
@@ -886,11 +886,11 @@ footer .footer-links a:hover{color:var(--gold)}
     </div>
     <div class="panel">
       <div class="bet-row" id="bacboBetsRow">
-        <button class="bet-btn" data-bet="0.10">R$ 0,10</button>
-        <button class="bet-btn" data-bet="0.25">R$ 0,25</button>
-        <button class="bet-btn active" data-bet="0.50">R$ 0,50</button>
-        <button class="bet-btn" data-bet="1.00">R$ 1,00</button>
-        <button class="bet-btn" data-bet="2.00">R$ 2,00</button>
+        <button class="bet-btn" data-bet="0.10">$ 0.10</button>
+        <button class="bet-btn" data-bet="0.25">$ 0.25</button>
+        <button class="bet-btn active" data-bet="0.50">$ 0.50</button>
+        <button class="bet-btn" data-bet="1.00">$ 1.00</button>
+        <button class="bet-btn" data-bet="2.00">$ 2.00</button>
       </div>
       <div class="custom-row"><input type="number" id="bacboCustom" placeholder="Valor personalizado" min="0.10" step="0.10" data-i18n-ph="ph.custom"><button onclick="applyCustomBet('bacbo')" data-i18n="btn.apply">Aplicar</button></div>
       <button class="action-btn" id="bacboAction" data-i18n="bb.roll">Rolar dados</button>
@@ -932,11 +932,11 @@ footer .footer-links a:hover{color:var(--gold)}
     </div>
     <div class="panel">
       <div class="bet-row" id="doubleBetsRow">
-        <button class="bet-btn" data-bet="0.10">R$ 0,10</button>
-        <button class="bet-btn" data-bet="0.25">R$ 0,25</button>
-        <button class="bet-btn active" data-bet="0.50">R$ 0,50</button>
-        <button class="bet-btn" data-bet="1.00">R$ 1,00</button>
-        <button class="bet-btn" data-bet="2.00">R$ 2,00</button>
+        <button class="bet-btn" data-bet="0.10">$ 0.10</button>
+        <button class="bet-btn" data-bet="0.25">$ 0.25</button>
+        <button class="bet-btn active" data-bet="0.50">$ 0.50</button>
+        <button class="bet-btn" data-bet="1.00">$ 1.00</button>
+        <button class="bet-btn" data-bet="2.00">$ 2.00</button>
       </div>
       <div class="custom-row"><input type="number" id="doubleCustom" placeholder="Valor personalizado" min="0.10" step="0.10" data-i18n-ph="ph.custom"><button onclick="applyCustomBet('double')" data-i18n="btn.apply">Aplicar</button></div>
       <button class="action-btn" id="doubleAction" data-i18n="btn.spin">Girar</button>
@@ -963,16 +963,16 @@ footer .footer-links a:hover{color:var(--gold)}
   <!-- ================== MINES ================== -->
   <section id="page-mines" class="page">
     <div class="topbar"><button class="back-btn" onclick="showPage('home')" data-i18n="back">← Voltar</button><h2 data-i18n="g.mines.title">💣 Mines</h2><button class="sound-toggle on">🔊</button></div>
-    <div class="status-bar"><span class="k" data-i18n="lbl.bet">Aposta</span><span class="v" id="minesBetDisplay">R$ 0,50</span><span class="k" data-i18n="lbl.mult">Mult.</span><span class="v" id="minesMultDisplay">1.00×</span></div>
+    <div class="status-bar"><span class="k" data-i18n="lbl.bet">Aposta</span><span class="v" id="minesBetDisplay">$ 0.50</span><span class="k" data-i18n="lbl.mult">Mult.</span><span class="v" id="minesMultDisplay">1.00×</span></div>
     <div class="mines-grid" id="minesGrid"></div>
     <div class="msg info" id="minesMsg" data-i18n="mn.init">Clique em apostar. 3 minas em 25 casas.</div>
     <div class="panel" style="margin-top:14px">
       <div class="bet-row" id="minesBets">
-        <button class="bet-btn" data-bet="0.10">R$ 0,10</button>
-        <button class="bet-btn" data-bet="0.25">R$ 0,25</button>
-        <button class="bet-btn active" data-bet="0.50">R$ 0,50</button>
-        <button class="bet-btn" data-bet="1.00">R$ 1,00</button>
-        <button class="bet-btn" data-bet="2.00">R$ 2,00</button>
+        <button class="bet-btn" data-bet="0.10">$ 0.10</button>
+        <button class="bet-btn" data-bet="0.25">$ 0.25</button>
+        <button class="bet-btn active" data-bet="0.50">$ 0.50</button>
+        <button class="bet-btn" data-bet="1.00">$ 1.00</button>
+        <button class="bet-btn" data-bet="2.00">$ 2.00</button>
       </div>
       <div class="custom-row"><input type="number" id="minesCustom" placeholder="Valor personalizado" min="0.10" step="0.10" data-i18n-ph="ph.custom"><button onclick="applyCustomBet('mines')" data-i18n="btn.apply">Aplicar</button></div>
       <button class="action-btn" id="minesAction" data-i18n="btn.bet">Apostar</button>
@@ -1004,11 +1004,11 @@ footer .footer-links a:hover{color:var(--gold)}
     <div class="msg info" id="bingoMsg" data-i18n="bg.init">Complete uma linha para ganhar.</div>
     <div class="panel" style="margin-top:14px">
       <div class="bet-row" id="bingoBets">
-        <button class="bet-btn" data-bet="0.10">R$ 0,10</button>
-        <button class="bet-btn" data-bet="0.25">R$ 0,25</button>
-        <button class="bet-btn active" data-bet="0.50">R$ 0,50</button>
-        <button class="bet-btn" data-bet="1.00">R$ 1,00</button>
-        <button class="bet-btn" data-bet="2.00">R$ 2,00</button>
+        <button class="bet-btn" data-bet="0.10">$ 0.10</button>
+        <button class="bet-btn" data-bet="0.25">$ 0.25</button>
+        <button class="bet-btn active" data-bet="0.50">$ 0.50</button>
+        <button class="bet-btn" data-bet="1.00">$ 1.00</button>
+        <button class="bet-btn" data-bet="2.00">$ 2.00</button>
       </div>
       <div class="custom-row"><input type="number" id="bingoCustom" placeholder="Valor personalizado" min="0.10" step="0.10" data-i18n-ph="ph.custom"><button onclick="applyCustomBet('bingo')" data-i18n="btn.apply">Aplicar</button></div>
       <button class="action-btn" id="bingoAction" data-i18n="bg.buy">Comprar cartela</button>
@@ -1064,11 +1064,11 @@ footer .footer-links a:hover{color:var(--gold)}
     </div>
     <div class="panel">
       <div class="bet-row" id="penaltyBets">
-        <button class="bet-btn" data-bet="0.10">R$ 0,10</button>
-        <button class="bet-btn" data-bet="0.25">R$ 0,25</button>
-        <button class="bet-btn active" data-bet="0.50">R$ 0,50</button>
-        <button class="bet-btn" data-bet="1.00">R$ 1,00</button>
-        <button class="bet-btn" data-bet="2.00">R$ 2,00</button>
+        <button class="bet-btn" data-bet="0.10">$ 0.10</button>
+        <button class="bet-btn" data-bet="0.25">$ 0.25</button>
+        <button class="bet-btn active" data-bet="0.50">$ 0.50</button>
+        <button class="bet-btn" data-bet="1.00">$ 1.00</button>
+        <button class="bet-btn" data-bet="2.00">$ 2.00</button>
       </div>
       <div class="custom-row"><input type="number" id="penaltyCustom" placeholder="Valor personalizado" min="0.10" step="0.10" data-i18n-ph="ph.custom"><button onclick="applyCustomBet('penalty')" data-i18n="btn.apply">Aplicar</button></div>
       <button class="action-btn" id="penaltyAction" data-i18n="btn.bet">Apostar</button>
@@ -1117,11 +1117,11 @@ footer .footer-links a:hover{color:var(--gold)}
     </div>
     <div class="panel">
       <div class="bet-row" id="diceBets">
-        <button class="bet-btn" data-bet="0.10">R$ 0,10</button>
-        <button class="bet-btn" data-bet="0.25">R$ 0,25</button>
-        <button class="bet-btn active" data-bet="0.50">R$ 0,50</button>
-        <button class="bet-btn" data-bet="1.00">R$ 1,00</button>
-        <button class="bet-btn" data-bet="2.00">R$ 2,00</button>
+        <button class="bet-btn" data-bet="0.10">$ 0.10</button>
+        <button class="bet-btn" data-bet="0.25">$ 0.25</button>
+        <button class="bet-btn active" data-bet="0.50">$ 0.50</button>
+        <button class="bet-btn" data-bet="1.00">$ 1.00</button>
+        <button class="bet-btn" data-bet="2.00">$ 2.00</button>
       </div>
       <div class="custom-row"><input type="number" id="diceCustom" placeholder="Valor personalizado" min="0.10" step="0.10" data-i18n-ph="ph.custom"><button onclick="applyCustomBet('dice')" data-i18n="btn.apply">Aplicar</button></div>
       <button class="action-btn" id="diceAction" data-i18n="btn.roll">Rolar</button>
@@ -1165,7 +1165,7 @@ footer .footer-links a:hover{color:var(--gold)}
 <div class="modal-overlay" id="adModal">
   <div class="modal">
     <h3 data-i18n="modal.title">💸 Saldo esgotado</h3>
-    <p data-i18n-html="modal.desc">Você ficou sem créditos. Assista a um anúncio para receber <strong style="color:var(--gold)">R$ 7,77</strong> em créditos.</p>
+    <p data-i18n-html="modal.desc">Você ficou sem créditos. Assista a um anúncio para receber <strong style="color:var(--gold)">$ 7.77</strong> em créditos.</p>
     <button class="action-btn" onclick="showTestAd()" data-i18n="modal.watch">▶ Assistir anúncio</button>
     <button class="back-btn" onclick="closeAdModal()" data-i18n="modal.notNow">Agora não</button>
   </div>
@@ -1178,7 +1178,7 @@ footer .footer-links a:hover{color:var(--gold)}
       <button class="test-ad-close" id="testAdClose" onclick="rewardFromAd()" aria-label="Close" style="display:none">✕</button>
     </div>
     <div class="test-ad-body">
-      <p data-i18n-html="ad.desc">Assista ao anúncio para receber <strong style="color:var(--gold)">R$ 7,77</strong> em créditos.</p>
+      <p data-i18n-html="ad.desc">Assista ao anúncio para receber <strong style="color:var(--gold)">$ 7.77</strong> em créditos.</p>
       <div class="rewarded-ad-box" id="rewardedAdContainer"></div>
       <button class="action-btn" id="testAdReceiveBtn" onclick="rewardFromAd()" style="display:none" data-i18n="ad.receive">Fechar e receber</button>
     </div>
@@ -1377,10 +1377,10 @@ const I18N = {
     'hero.title':'Escolha seu jogo','hero.sub':'Mais de 12 jogos. Créditos virtuais.',
     'hero.badge':'🎮 CRÉDITOS VIRTUAIS · SEM VALOR MONETÁRIO',
     'sec.slots':'Slots & Crash','sec.table':'Mesa & Cartas','sec.casual':'Casual & Sorte','sec.how':'Como funciona',
-    'home.how':'Você começa com <strong style="color:var(--gold)">R$ 7,77</strong> em créditos virtuais. Saldo zerado libera a opção de ganhar mais assistindo um anúncio. Sem depósito, sem saque, sem conversão.',
+    'home.how':'Você começa com <strong style="color:var(--gold)">$ 7.77</strong> em créditos virtuais. Saldo zerado libera a opção de ganhar mais assistindo um anúncio. Sem depósito, sem saque, sem conversão.',
     'faq.title':'Perguntas Frequentes',
     'faq.q1':'O NananBet é gratuito?',
-    'faq.a1':'Sim. O NananBet é 100% gratuito. Você começa com R$ 7,77 em créditos virtuais e pode ganhar mais assistindo anúncios. Não é necessário depositar nada.',
+    'faq.a1':'Sim. O NananBet é 100% gratuito. Você começa com $ 7.77 em créditos virtuais e pode ganhar mais assistindo anúncios. Não é necessário depositar nada.',
     'faq.q2':'Posso sacar os créditos?',
     'faq.a2':'Não. Os créditos são virtuais e não podem ser convertidos em dinheiro real, sacados ou transferidos. É apenas entretenimento.',
     'faq.q3':'Preciso baixar algo?',
@@ -1437,14 +1437,14 @@ const I18N = {
     'foot.info':'NananBet é uma plataforma de entretenimento com créditos virtuais.<br>Não é possível depositar, sacar ou converter créditos em dinheiro.<br>Proibido para menores de 18 anos. Jogue com responsabilidade.',
     'foot.advertise':'📩 Anuncie aqui','foot.copy':'© nanangames — 2026',
     'foot.home':'Início','foot.about':'Sobre','foot.privacy':'Privacidade','foot.terms':'Termos',
-    'modal.title':'💸 Saldo esgotado','modal.desc':'Você ficou sem créditos. Assista a um anúncio para receber <strong style="color:var(--gold)">R$ 7,77</strong> em créditos.',
+    'modal.title':'💸 Saldo esgotado','modal.desc':'Você ficou sem créditos. Assista a um anúncio para receber <strong style="color:var(--gold)">$ 7.77</strong> em créditos.',
     'modal.watch':'▶ Assistir anúncio','modal.notNow':'Agora não',
-    'ad.title':'📢 ANÚNCIO','ad.desc':'Assista ao anúncio para receber <strong style="color:var(--gold)">R$ 7,77</strong> em créditos.','ad.receive':'Fechar e receber','ad.publicity':'📢 Publicidade',
-    'msg.insufficient':'Saldo insuficiente.','msg.minBet':'Valor mínimo: R$ 0,10','msg.maxBet':'Valor máximo: R$ 100,00',
+    'ad.title':'📢 ANÚNCIO','ad.desc':'Assista ao anúncio para receber <strong style="color:var(--gold)">$ 7.77</strong> em créditos.','ad.receive':'Fechar e receber','ad.publicity':'📢 Publicidade',
+    'msg.insufficient':'Saldo insuficiente.','msg.minBet':'Valor mínimo: $ 0.10','msg.maxBet':'Valor máximo: $ 100.00',
     'msg.spinning':'Girando...','msg.rolling':'Rolando...','msg.betConfirmed':'Aposta de {v} confirmada.',
     'msg.won':'Ganhou {v}! ({m}×)','msg.won2':'Ganhou {v}!','msg.noWin':'Não foi dessa vez.',
     'msg.crashLost':'Caiu em {m}× — aposta perdida.','msg.crashCashed':'Saque em {m}× — ganhou {v}!',
-    'msg.adDone':'Anúncio concluído! +R$ 7,77 em créditos.','msg.tigerNothing':'Nenhuma linha completa.',
+    'msg.adDone':'Anúncio concluído! +$ 7.77 em créditos.','msg.tigerNothing':'Nenhuma linha completa.',
     'msg.raspNothing':'Nenhum quarteto. Tente outra cartela.','msg.raspProgress':'{n}/9 casas raspadas.',
     'msg.minesStart':'Clique nas casas. Fuja das 3 minas!','msg.minesHit':'💥 Mina! Perdeu {v}.',
     'msg.minesMult':'{n} joia(s) — {m}×','msg.minesCash':'Saque em {m}× — ganhou {v}!','msg.minesBet':'Aposte para começar.',
@@ -1465,16 +1465,16 @@ const I18N = {
     'msg.aviatorLostMsg':'Você perdeu a aposta','msg.aviatorCashed':'Você sacou a tempo','msg.aviatorNotBet':'Não apostou nesta rodada',
     'msg.aviatorNext':'Próxima rodada...','msg.aviatorInFlight':'Em voo...','msg.aviatorWaiting':'Aguardando apostas',
     'btn.confirmed':'Aposta confirmada','btn.cashOut':'Sacar',
-    'recharge.title':'Ganhar +R$ 7,77 assistindo um anúncio',
+    'recharge.title':'Ganhar +$ 7.77 assistindo um anúncio',
     'pen.zone.left':'Esquerda','pen.zone.center':'Meio','pen.zone.right':'Direita',
     'color.red':'vermelho','color.black':'preto','color.white':'branco',
     'label.you':'Você','label.dealer':'Banca','label.tie':'Empate',
-    'seo.slots.how':'Como jogar Frutas da Sorte','seo.slots.p1':'Frutas da Sorte é um slot clássico de 3 rolos com 6 símbolos. Escolha sua aposta (de R$ 0,10 a R$ 2,00), clique em "Girar" e torça para três símbolos iguais aparecerem nos três rolos. O prêmio é multiplicado pela sua aposta de acordo com a tabela acima.',
+    'seo.slots.how':'Como jogar Frutas da Sorte','seo.slots.p1':'Frutas da Sorte é um slot clássico de 3 rolos com 6 símbolos. Escolha sua aposta (de $ 0.10 a $ 2.00), clique em "Girar" e torça para três símbolos iguais aparecerem nos três rolos. O prêmio é multiplicado pela sua aposta de acordo com a tabela acima.',
     'seo.slots.tips':'Dicas estratégicas','seo.slots.tip1':'O símbolo ⭐ é o mais raro e paga 420× — mas a probabilidade é de apenas 0,02%.',
     'seo.slots.tip2':'O RTP (Retorno ao Jogador) deste slot é de aproximadamente 95%, o que significa que, no longo prazo, 5% de cada aposta fica "para a casa".','seo.slots.tip3':'Aposte o mínimo para durar mais rodadas e aumentar suas chances de acertar um prêmio alto.',
     'seo.av.how':'Como jogar Aviãozinho','seo.av.p1':'O Aviãozinho é um jogo de crash: um multiplicador começa em 1.00× e sobe enquanto o avião está no ar. Você precisa sacar antes que o avião caia. Se cair antes do seu saque, você perde a aposta.',
     'seo.av.tips':'Dicas estratégicas','seo.av.tip1':'Saque cedo (1.2× a 1.5×) para vitórias frequentes e pequenas, ou tarde (5×+) para prêmios maiores, porém raros.',
-    'seo.av.tip2':'O RTP é de 97% — a cada R$ 100 apostados, R$ 97 retornam em média.','seo.av.tip3':'Não existe "estratégia infalível" — o resultado é aleatório a cada rodada.',
+    'seo.av.tip2':'O RTP é de 97% — a cada $ 100 apostados, $ 97 retornam em média.','seo.av.tip3':'Não existe "estratégia infalível" — o resultado é aleatório a cada rodada.',
     'seo.tiger.how':'Como jogar Fortune Tiger','seo.tiger.p1':'Fortune Tiger é um slot 3×3 com 8 linhas de pagamento (3 horizontais, 3 verticais e 2 diagonais). O objetivo é completar uma linha com três símbolos iguais. O símbolo 🐯 é o mais valioso, pagando 40× a aposta por linha.',
     'seo.tiger.tips':'Dicas estratégicas','seo.tiger.tip1':'Você pode ganhar em múltiplas linhas ao mesmo tempo — os prêmios se somam.',
     'seo.tiger.tip2':'O RTP é de aproximadamente 95%, similar ao slot original da PG Soft.','seo.tiger.tip3':'Foque em apostas menores para maximizar o tempo de jogo.',
@@ -1516,9 +1516,9 @@ const I18N = {
     'hero.title':'Choose your game','hero.sub':'Over 12 games. Virtual credits.',
     'hero.badge':'🎮 VIRTUAL CREDITS · NO MONETARY VALUE',
     'sec.slots':'Slots & Crash','sec.table':'Table & Cards','sec.casual':'Casual & Luck','sec.how':'How it works',
-    'home.how':'You start with <strong style="color:var(--gold)">R$ 7.77</strong> in virtual credits. Zero balance unlocks the option to earn more by watching an ad. No deposit, no withdrawal, no conversion.',
+    'home.how':'You start with <strong style="color:var(--gold)">$ 7.77</strong> in virtual credits. Zero balance unlocks the option to earn more by watching an ad. No deposit, no withdrawal, no conversion.',
     'faq.title':'Frequently Asked Questions',
-    'faq.q1':'Is NananBet free?','faq.a1':'Yes. NananBet is 100% free. You start with R$ 7.77 in virtual credits and can earn more by watching ads.',
+    'faq.q1':'Is NananBet free?','faq.a1':'Yes. NananBet is 100% free. You start with $ 7.77 in virtual credits and can earn more by watching ads.',
     'faq.q2':'Can I withdraw credits?','faq.a2':'No. Credits are virtual and cannot be converted to real money, withdrawn, or transferred. It is for entertainment only.',
     'faq.q3':'Do I need to download anything?','faq.a3':'No. All games run directly in your browser, no download or installation needed.',
     'faq.q4':'What games are available?','faq.a4':'Over 12 games: Lucky Fruits, Aviator, Fortune Tiger, Scratch Card, Roulette, Blackjack 21, Bac Bo, Double, Mines, Bingo, Penalty, and Dice.',
@@ -1571,14 +1571,14 @@ const I18N = {
     'foot.info':'NananBet is an entertainment platform with virtual credits.<br>You cannot deposit, withdraw, or convert credits into money.<br>Not for under 18. Play responsibly.',
     'foot.advertise':'📩 Advertise here','foot.copy':'© nanangames — 2026',
     'foot.home':'Home','foot.about':'About','foot.privacy':'Privacy','foot.terms':'Terms',
-    'modal.title':'💸 Balance depleted','modal.desc':'You ran out of credits. Watch an ad to receive <strong style="color:var(--gold)">R$ 7.77</strong> in credits.',
+    'modal.title':'💸 Balance depleted','modal.desc':'You ran out of credits. Watch an ad to receive <strong style="color:var(--gold)">$ 7.77</strong> in credits.',
     'modal.watch':'▶ Watch ad','modal.notNow':'Not now',
-    'ad.title':'📢 ADVERTISEMENT','ad.desc':'Watch the ad to receive <strong style="color:var(--gold)">R$ 7.77</strong> in credits.','ad.receive':'Close and receive','ad.publicity':'📢 Advertisement',
-    'msg.insufficient':'Insufficient balance.','msg.minBet':'Minimum: R$ 0.10','msg.maxBet':'Maximum: R$ 100.00',
+    'ad.title':'📢 ADVERTISEMENT','ad.desc':'Watch the ad to receive <strong style="color:var(--gold)">$ 7.77</strong> in credits.','ad.receive':'Close and receive','ad.publicity':'📢 Advertisement',
+    'msg.insufficient':'Insufficient balance.','msg.minBet':'Minimum: $ 0.10','msg.maxBet':'Maximum: $ 100.00',
     'msg.spinning':'Spinning...','msg.rolling':'Rolling...','msg.betConfirmed':'Bet of {v} confirmed.',
     'msg.won':'You won {v}! ({m}×)','msg.won2':'You won {v}!','msg.noWin':'Not this time.',
     'msg.crashLost':'Crashed at {m}× — bet lost.','msg.crashCashed':'Cashed out at {m}× — won {v}!',
-    'msg.adDone':'Ad completed! +R$ 7.77 in credits.','msg.tigerNothing':'No complete line.',
+    'msg.adDone':'Ad completed! +$ 7.77 in credits.','msg.tigerNothing':'No complete line.',
     'msg.raspNothing':'No quartet. Try another card.','msg.raspProgress':'{n}/9 tiles scratched.',
     'msg.minesStart':'Click tiles. Avoid the 3 mines!','msg.minesHit':'💥 Mine! You lost {v}.',
     'msg.minesMult':'{n} gem(s) — {m}×','msg.minesCash':'Cashed out at {m}× — won {v}!','msg.minesBet':'Bet to start.',
@@ -1599,7 +1599,7 @@ const I18N = {
     'msg.aviatorLostMsg':'You lost the bet','msg.aviatorCashed':'You cashed out in time','msg.aviatorNotBet':'Did not bet this round',
     'msg.aviatorNext':'Next round...','msg.aviatorInFlight':'In flight...','msg.aviatorWaiting':'Waiting for bets',
     'btn.confirmed':'Bet confirmed','btn.cashOut':'Cash out',
-    'recharge.title':'Earn +R$ 7.77 by watching an ad',
+    'recharge.title':'Earn +$ 7.77 by watching an ad',
     'pen.zone.left':'Left','pen.zone.center':'Center','pen.zone.right':'Right',
     'color.red':'red','color.black':'black','color.white':'white',
     'label.you':'You','label.dealer':'Dealer','label.tie':'Tie',
@@ -1666,7 +1666,7 @@ let balance = Store.get('balance', START_BALANCE);
 let adShownThisZero = false, adActive = false;
 const balanceEl = document.getElementById('balanceEl');
 const rechargeBtn = document.getElementById('rechargeBtn');
-function fmt(v){ return 'R$ ' + v.toFixed(2).replace('.', ','); }
+function fmt(v){ return '$ ' + v.toFixed(2); }
 function setBalance(v, animate){
   const wasZero = balance < 0.10;
   balance = Math.max(0, Math.round(v*100)/100);
